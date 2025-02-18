@@ -202,12 +202,12 @@ main {
 /* Continue reminder animation */
 .winning_message:is(.show_draw, .cross, .circle) > p {
     animation: continue_reminder ease-in-out var(--transition_duration_fast);
-    animation-delay: calc(var(--transition_duration_medium) * 4);
+    animation-delay: calc(var(--transition_duration_medium) * 3);
 }
 
 @keyframes continue_reminder {
-    30% { transform: rotate(10deg); }
-    70% { transform: rotate(-10deg); }
+    30% { transform: rotate(20deg); }
+    70% { transform: rotate(-20deg); }
 }
 
 
