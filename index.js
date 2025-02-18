@@ -1,7 +1,7 @@
-import { play_sound, click_sound_O, click_sound_X, winning_sound, draw_sound, sound_button, is_muted, toggle_sound } from "./Assets/Sounds/sounds.js";
+// import { play_sound, click_sound_O, click_sound_X, winning_sound, draw_sound, sound_button, is_muted, toggle_sound } from "./Assets/Sounds/sounds.js";
 
 // Let the user choose the sound system
-sound_button.addEventListener("click", toggle_sound);
+// sound_button.addEventListener("click", toggle_sound);
 
 const cells = document.querySelectorAll(".cell");
 
@@ -122,12 +122,12 @@ function place_the_mark(cell, current_turn) {
     cell.classList.add(current_turn); // Place the mark to the cell
 
     // Play the sound of the current mark
-    if (current_turn === CROSS_CLASS) {
-        play_sound(click_sound_X, is_muted);
-    }
-    else {
-        play_sound(click_sound_O, is_muted);
-    }
+    // if (current_turn === CROSS_CLASS) {
+    //     play_sound(click_sound_X, is_muted);
+    // }
+    // else {
+    //     play_sound(click_sound_O, is_muted);
+    // }
 }
 
 
@@ -191,13 +191,13 @@ function end_the_game(win, winning_cells = []) {
         highlight_winning_cells(winning_cells); 
         update_scores(circle_turn);
 
-        play_sound(winning_sound, is_muted); // Play the winning sound
+        // play_sound(winning_sound, is_muted); // Play the winning sound
     }
     else {
         winning_message.classList.add("show_draw"); // Show the draw class if there is no winner
         winner_text.innerText = "DRAW!"; 
 
-        play_sound(draw_sound, is_muted); // Play the draw sound
+        // play_sound(draw_sound, is_muted); // Play the draw sound
     }
 
     // Add pointer events to the message after a delay
