@@ -88,6 +88,9 @@ main {
         stroke-dashoffset var(--transition_duration_fast);
 }
 
+/* Disable the cursor for the marked cells */
+.cell:is(.cross, .circle) { cursor: not-allowed; }
+
 
 /* X marks */
 .cell > .cross_svg { 
@@ -328,7 +331,7 @@ main {
 .sound_button > svg {
     position: absolute;
     fill: var(--color_main);
-    width: calc(var(--button_font_size) * 2);
+    width: calc(var(--button_font_size) * 2.2);
 }
 
 /* Sound enabled condition */
