@@ -137,6 +137,36 @@ body.lime {
 }
 
 
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    background-color: var(--color_bg);
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0.5vmin;
+    height: 0.5vmin;
+}
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+    border-radius: 5em;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--color_main);
+    border-radius: 5em;
+}
 
 
 

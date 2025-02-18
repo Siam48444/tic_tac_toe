@@ -1,22 +1,3 @@
-*,
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body,
-html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    position: relative;
-    background-color: var(--color_bg);
-    overflow-x: hidden;
-}
-
-
 /* Navigation bar */
 nav {
     height: var(--nav_height);
@@ -369,7 +350,7 @@ main {
 
 .theme_palette {
     background-color: var(--color_bg);
-    height: 80%;
+    height: 50%;
     width: calc(var(--cell_width) * 3.5);
     border: solid 0.1em var(--color_main);
     border-radius: var(--button_font_size);
