@@ -1,4 +1,4 @@
-import { click_sound_X, click_sound_O, winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
+import { click_sound_X, click_sound_O, winning_sound, draw_sound, play_sound, is_muted, toggle_sound } from "./Assets/Sounds/sounds.js";
 
 
 const cells = document.querySelectorAll(".cell");
@@ -33,7 +33,7 @@ const WINNING_COMBINATIONS = [
 
 
 // Let the user choose the sound system
-sound_button.addEventListener("click", toggle_sound);
+document.querySelector(".sound_button").addEventListener("click", toggle_sound);
 
 
 

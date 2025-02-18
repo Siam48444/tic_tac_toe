@@ -6,20 +6,18 @@ export const draw_sound = new Audio("./Assets/Sounds/draw_sound.mp3");
 
 
 
-// Let the user choose the sound system
+// Let the user choose to mute or unmute
 export let is_muted = false;
-export const sound_button = document.querySelector(".sound_button");
 
 export function toggle_sound() {
-    sound_button.classList.toggle("muted");
-    is_muted = !is_muted;
+    sound_button.classList.toggle("muted"); // Show the sound system visually
+    is_muted = !is_muted; // Switch between mute and unmute
 }
 
 
 
-// Function to play the game
-export function play_sound(sound, is_muted=false) {
-    if ( !is_muted ) {
-        sound.play();
-    }
+// Function to play the sound
+export function play_sound(sound, is_muted = false) {
+    if (is_muted) { return; }
+    else { sound.play(); }
 }
