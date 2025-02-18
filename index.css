@@ -315,7 +315,7 @@ main {
     border: none;
     border-radius: 50%;
     aspect-ratio: 1;
-    padding: var(--button_padding);
+    padding: clamp(1.25em, 2.2vmin, 2.7em);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -328,7 +328,7 @@ main {
 .sound_button > svg {
     position: absolute;
     fill: var(--color_main);
-    width: calc(var(--button_font_size) * 1.8);
+    width: calc(var(--button_font_size) * 2);
 }
 
 /* Sound enabled condition */
