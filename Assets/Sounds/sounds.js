@@ -19,4 +19,5 @@ export const sound_button = document.querySelector(".sound_button");
 
 export function toggle_sound() {
     sound_button.classList.toggle("muted");
+    is_muted = !is_muted;
 }

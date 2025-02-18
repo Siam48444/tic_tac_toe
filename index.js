@@ -1,4 +1,4 @@
-import { click_sound_X, click_sound_O, play_sound } from "./Assets/Sounds/sounds.js";
+import { click_sound_X, click_sound_O, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
 
 // Let the user choose the sound system
 sound_button.addEventListener("click", toggle_sound);
@@ -123,10 +123,10 @@ function place_the_mark(cell, current_turn) {
 
     // Play the sound of the current mark
     if (current_turn === CROSS_CLASS) {
-        play_sound(click_sound_X)
+        play_sound(click_sound_X, is_muted)
     }
     else {
-        play_sound(click_sound_O);
+        play_sound(click_sound_O, is_muted);
     }
 }
 
