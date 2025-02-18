@@ -1,0 +1,166 @@
+@font-face {
+    font-family: "Inter_Regular";
+    font-weight: 300;
+    src: url(./Assets/Fonts/Inter_28pt-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Inter_Medium";
+    font-weight: 400;
+    src: url(./Assets/Fonts/Inter_28pt-Medium.ttf);
+}
+
+@font-face {
+    font-family: "Inter_Bold";
+    font-weight: 600;
+    src: url(./Assets/Fonts/Inter_28pt-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Inter_Extrabold";
+    font-weight: 800;
+    src: url(./Assets/Fonts/Inter_28pt-ExtraBold.ttf);
+}
+
+
+:root {
+    --cell_width: clamp(4em, 16vmin, 15em);
+
+    --mark_size: calc(var(--cell_width) * 0.9);
+    --mark_thickness: 1em;
+
+    --stroke_dash_X: 111;
+    --stroke_dash_O: 222;
+
+    --nav_height: calc(clamp(0.5em, 1vmin, 1.3em) * 6.6);
+
+    --button_border_radius: 50em;
+    --button_padding: clamp(0.5em, 1vmin, 1.3em) clamp(1em, 2vmin, 2.6em);
+    --button_font_size: clamp(0.9em, 1.5vmin, 1em);
+    --button_box_shadow_offset: 0 0.25em;
+
+    --winning_message_heading_size: calc(var(--cell_width) * 0.5);
+
+    --transition_duration_fast: 300ms;
+    --transition_duration_medium: calc(var(--transition_duration_fast) + 300ms);
+
+    --theme_head_font_size: calc(var(--button_font_size) * 1.4);
+    --theme_head_padding: clamp(1em, 1.5vmin, 1.5em);
+    --theme_option_padding: clamp(0.4em, 0.5vmin, 0.7em) clamp(0.6em, 1vmin, 1em);
+    --theme_indicator_dots_width: calc(var(--button_font_size) * 0.8);
+}
+
+
+/* Themes */
+body.default_light {
+    --color_bg: #eeeeee;
+    --color_main: #444444;
+    --color_sub: #d0d4d9;
+}
+
+body.default_dark {
+    --color_bg: #202020;
+    --color_main: #eeeeee;
+    --color_sub: rgb(78, 78, 78);
+}
+
+body.dollar {
+    --color_bg: #e4e4d4;
+    --color_main: #415041;
+    --color_sub: #cbd0bf;
+}
+
+body.serika_dark {
+    --color_bg: #323437;
+    --color_main: #e2b714;
+    --color_sub: #404347;
+}
+
+body.moonlight {
+    --color_bg: #191f28;
+    --color_main: #c69f68;
+    --color_sub: #141a22;
+}
+
+body.retro {
+    --color_bg: #dad3c1;
+    --color_main: #1d1b17;
+    --color_sub: #c8c3b3;
+}
+
+body.carbon {
+    --color_bg: #313131;
+    --color_main: #f66e0d;
+    --color_sub: #424141;
+}
+
+body.neon_ember {
+    --color_bg: #333a45;
+    --color_main: #f44c7f;
+    --color_sub: #161616;
+}
+
+body.cafe {
+    --color_bg: #ceb18d;
+    --color_main: #14120f;
+    --color_sub: #bba180;
+}
+body.red {
+    --color_bg: #6e2626;
+    --color_main: #e55050;
+    --color_sub: #3f1616;
+}
+body.darling {
+    --color_bg: #fec8cd;
+    --color_main: #a30000;
+    --color_sub: #f2babd;
+}
+body.discord {
+    --color_bg: #25272b;
+    --color_main: #5a65ea;
+    --color_sub: #3c3f44;
+}
+body.honey {
+    --color_bg: #f2aa00;
+    --color_main: #fff546;
+    --color_sub: #e19e00;
+}
+body.leather {
+    --color_bg: #a86948;
+    --color_main: #ffe4bc;
+    --color_sub: #9a5f3f;
+}
+body.lime {
+    --color_bg: #7c878e;
+    --color_main: #a7dd50;
+    --color_sub: #6e787c;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+@media (width <=550px) {
+    :root {
+        --cell_width: 23vmin;
+    }
+}
+
+@media (width <=450px) {
+    :root {
+        --cell_width: 26vmin;
+    }
+}
