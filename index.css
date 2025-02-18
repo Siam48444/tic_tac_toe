@@ -283,7 +283,7 @@ main {
 
 
 /* Button for toggling themes */
-.appearance_button {
+.theme_button {
     padding: var(--button_padding);
     background-color: var(--color_sub);
     outline: none;
@@ -301,7 +301,7 @@ main {
     transition: box-shadow var(--transition_duration_fast);
 }
 
-.appearance_button > svg {
+.theme_button > svg {
     fill: var(--color_main);
     width: var(--button_font_size);
     aspect-ratio: 1;
@@ -457,7 +457,7 @@ main {
 
 
 @media (width >=1000px) {
-    :is(.restart_button, .score_button, .appearance_button, .sound_button):hover {
+    :is(.restart_button, .score_button, .theme_button, .sound_button):hover {
         box-shadow: var(--button_box_shadow_offset) var(--color_main);
     }
 

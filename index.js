@@ -1,4 +1,4 @@
-import { click_sound_X, click_sound_O, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
+import { click_sound_X, click_sound_O, winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
 
 // Let the user choose the sound system
 sound_button.addEventListener("click", toggle_sound);
@@ -191,13 +191,13 @@ function end_the_game(win, winning_cells = []) {
         highlight_winning_cells(winning_cells); 
         update_scores(circle_turn);
 
-        // play_sound(winning_sound, is_muted); // Play the winning sound
+        play_sound(winning_sound, is_muted); // Play the winning sound
     }
     else {
         winning_message.classList.add("show_draw"); // Show the draw class if there is no winner
         winner_text.innerText = "DRAW!"; 
 
-        // play_sound(draw_sound, is_muted); // Play the draw sound
+        play_sound(draw_sound, is_muted); // Play the draw sound
     }
 
     // Add pointer events to the message after a delay

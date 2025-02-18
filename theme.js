@@ -4,8 +4,8 @@ const THEMES = [
     "honey", "leather", "lime",
 ]
 
-const appearance_button = document.querySelector(".appearance_button");
-const appearance_text = appearance_button.querySelector("p");
+const theme_button = document.querySelector(".theme_button");
+const appearance_text = theme_button.querySelector("p");
 
 const theme_container = document.querySelector(".theme_container");
 const theme_cancel_svg = document.querySelector(".theme_top_head > svg");
@@ -36,7 +36,7 @@ if (stored_theme_name) { appearance_text.innerText = stored_theme_name; } // Upd
 
 
 // Show theme dropdown on click
-appearance_button.addEventListener("click", () => {
+theme_button.addEventListener("click", () => {
     theme_container.classList.add("theme_open");
 });
 
