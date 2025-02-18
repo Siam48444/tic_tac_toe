@@ -350,7 +350,7 @@ main {
 
 .theme_palette {
     background-color: var(--color_bg);
-    height: 50%;
+    height: 80%;
     width: calc(var(--cell_width) * 3.5);
     border: solid 0.1em var(--color_main);
     border-radius: var(--button_font_size);
