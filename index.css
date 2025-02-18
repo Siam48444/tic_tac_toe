@@ -19,13 +19,13 @@ html {
 
 /* Navigation bar */
 nav {
+    height: var(--nav_height);
+    width: min(100%, 2000px);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1em;
     padding: var(--button_padding);
-    height: var(--nav_height);
-    width: min(100%, 2000px);
     background-color: transparent;
     margin: auto;
 }
