@@ -1,7 +1,5 @@
 import { click_sound_X, click_sound_O, winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
 
-// Let the user choose the sound system
-sound_button.addEventListener("click", toggle_sound);
 
 const cells = document.querySelectorAll(".cell");
 
@@ -34,6 +32,11 @@ const WINNING_COMBINATIONS = [
 
 
 
+// Let the user choose the sound system
+sound_button.addEventListener("click", toggle_sound);
+
+
+
 // Start the game by user clicks
 winning_message.addEventListener("click", start_the_game); // Start the next round
 restart_button.addEventListener("click", () => { // Reset the scores and restart the game
@@ -62,8 +65,8 @@ function start_the_game() {
 
 
 
+// Reset the scores after restarting the game
 function reset_scores() {
-    // Reset the scores after restarting the game
     Xscore = 0;
     Oscore = 0;
     score_X.innerText = "-";
@@ -72,8 +75,8 @@ function reset_scores() {
 
 
 
+// Get the first turn by the user click
 function get_user_turn() {
-    // Get the first turn by the user click
     score_button_X.addEventListener("click", choose_X);
     score_button_O.addEventListener("click", choose_O);
 }
@@ -137,8 +140,8 @@ function swap_turn() { circle_turn = !circle_turn; }
 
 
 
+// Check if any winning combination is met and return it
 function is_winner(current_turn) {
-    // Check if any winning combination is met and return it
     return WINNING_COMBINATIONS.find(combination => {
         return combination.every(index => {
             return cells[index].classList.contains(current_turn);
@@ -148,8 +151,8 @@ function is_winner(current_turn) {
 
 
 
+// Update the score after each round
 function update_scores(circle_turn) {
-    // Update the score after each round
     if (circle_turn) {
         Oscore ++;
         score_O.innerText = Oscore;
@@ -162,8 +165,8 @@ function update_scores(circle_turn) {
 
 
 
+// Highlight cells that form the winning combination
 function highlight_winning_cells(winning_cells) {
-    // Highlight cells that form the winning combination
     winning_cells.forEach(index => {
         cells[index].classList.add("won_cell");
     });
@@ -171,8 +174,8 @@ function highlight_winning_cells(winning_cells) {
 
 
 
+// Check if all cells are filled without a winner
 function is_draw() {
-    // Check if all cells are filled without a winner
     return Array.from(cells).every(cell => {
         return cell.classList.contains(CROSS_CLASS) || cell.classList.contains(CIRCLE_CLASS);
     });
