@@ -10,3 +10,13 @@ export function play_sound(sound, is_muted=false) {
         sound.play();
     }
 }
+
+
+
+// Let the user choose the sound system
+export let is_muted = false;
+export const sound_button = document.querySelector(".sound_button");
+
+export function toggle_sound() {
+    sound_button.classList.toggle("muted");
+}
