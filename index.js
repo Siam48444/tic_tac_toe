@@ -20,7 +20,7 @@ const CROSS_CLASS = "cross"; // Class for X mark
 const CIRCLE_CLASS = "circle"; // Class for O mark
 const ACTIVE_TURN = "active_turn"; // Class for active turn
 
-let circle_turn; // Tracks if it's O's turn
+let circle_turn = false; // Tracks if it's O's turn
 let game_over; // Tracks if the game is over
 
 
@@ -48,7 +48,6 @@ function start_the_game() {
     winning_message.style.pointerEvents = "none"; // Remove pointer events to the message after a delay
 
     game_over = false; // Reset game over state
-    circle_turn = false; // Start the game with cross
 
     get_user_turn(); // Let the user choose the first mark
     update_turn_indicator(); // Indicate the user turn graphically 
@@ -83,8 +82,14 @@ function choose_O() { circle_turn = true; update_turn_indicator(); }
 
 function update_turn_indicator() {
     // Indicate the user turn graphically
-    circle_turn ? score_button_O.classList.add(ACTIVE_TURN) : score_button_O.classList.remove(ACTIVE_TURN);
-    !circle_turn ? score_button_X.classList.add(ACTIVE_TURN) : score_button_X.classList.remove(ACTIVE_TURN);
+    if (circle_turn) {
+        score_button_O.classList.add(ACTIVE_TURN)
+        score_button_X.classList.remove(ACTIVE_TURN)
+    }
+    else {
+        score_button_X.classList.add(ACTIVE_TURN)
+        score_button_O.classList.remove(ACTIVE_TURN)
+    }
 }
 
 
