@@ -32,6 +32,8 @@ function start_the_game() {
     winning_message.classList.remove(CROSS_CLASS, CIRCLE_CLASS, "show_draw"); // Hide winning message
     winning_message.style.pointerEvents = "none"; // Remove pointer events to the message after a delay
 
+    game_over = false; // Reset the game over state
+
     get_user_turn(); // Let the user choose the first mark
     update_turn_indicator(); // Indicate the user turn graphically 
 
