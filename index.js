@@ -1,5 +1,6 @@
 import { click_sound_X, click_sound_O, winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
 import { score_button_O, score_button_X, reset_scores, update_scores } from "./JS/scores.js";
+import { CROSS_CLASS, CIRCLE_CLASS, ACTIVE_TURN, circle_turn, game_over, WINNING_COMBINATIONS } from "./JS/rules.js";
 
 
 const cells = document.querySelectorAll(".cell");
@@ -7,22 +8,6 @@ const winning_message = document.querySelector(".winning_message");
 const winner_text = document.querySelector(".winning_message h1");
 const restart_button = document.querySelector(".restart_button");
 
-
-
-const CROSS_CLASS = "cross"; // Class for X mark
-const CIRCLE_CLASS = "circle"; // Class for O mark
-const ACTIVE_TURN = "active_turn"; // Class for active turn
-
-let circle_turn = false; // Tracks if it's O's turn
-let game_over; // Tracks if the game is over
-
-
-// All possible winning combinations
-const WINNING_COMBINATIONS = [ 
-    [0, 1, 2], [3, 4, 5], [6, 7, 8], // Horizontals
-    [0, 3, 6], [1, 4, 7], [2, 5, 8], // Verticals
-    [0, 4, 8], [2, 4, 6] // Diagonals
-];
 
 
 // Let the user choose to mute or unmute
