@@ -1,6 +1,6 @@
 import { click_sound_X, click_sound_O, winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
 import { score_button_O, score_button_X, reset_scores, update_scores } from "./JS/scores.js";
-import { CROSS_CLASS, CIRCLE_CLASS, ACTIVE_TURN, is_winner, is_draw, highlight_winning_cells } from "./JS/rules.js";
+import { CROSS_CLASS, CIRCLE_CLASS, is_winner, is_draw, highlight_winning_cells } from "./JS/rules.js";
 
 
 const cells = document.querySelectorAll(".cell");
@@ -57,12 +57,12 @@ function choose_O() { circle_turn = true; update_turn_indicator(); }
 function update_turn_indicator() {
     // Indicate the user turn graphically
     if (circle_turn) {
-        score_button_O.classList.add(ACTIVE_TURN)
-        score_button_X.classList.remove(ACTIVE_TURN)
+        score_button_O.classList.add("active_turn")
+        score_button_X.classList.remove("active_turn")
     }
     else {
-        score_button_X.classList.add(ACTIVE_TURN)
-        score_button_O.classList.remove(ACTIVE_TURN)
+        score_button_X.classList.add("active_turn")
+        score_button_O.classList.remove("active_turn")
     }
 }
 

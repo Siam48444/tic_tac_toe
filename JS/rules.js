@@ -1,6 +1,5 @@
 export const CROSS_CLASS = "cross"; // Class for X mark
 export const CIRCLE_CLASS = "circle"; // Class for O mark
-export const ACTIVE_TURN = "active_turn"; // Class for active turn
 
 export const WINNING_COMBINATIONS = [ 
     [0, 1, 2], [3, 4, 5], [6, 7, 8], // Horizontals
