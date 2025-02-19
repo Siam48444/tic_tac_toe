@@ -1,20 +1,13 @@
 import { click_sound_X, click_sound_O, winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
+import { score_O, score_X, score_button_O, score_button_X, reset_scores } from "./scores.js";
 
-// Let the user choose to mute or unmute
-sound_button.addEventListener("click", toggle_sound);
 
 const cells = document.querySelectorAll(".cell");
 const winning_message = document.querySelector(".winning_message");
 const winner_text = document.querySelector(".winning_message h1");
 const restart_button = document.querySelector(".restart_button");
 
-const score_button_X = document.querySelector(".score_button_X");
-const score_button_O = document.querySelector(".score_button_O");
-const score_X = document.querySelector(".score_X");
-const score_O = document.querySelector(".score_O");
 
-let Xscore = 0; // Tracks the score of X
-let Oscore = 0; // Tracks the score of O
 
 const CROSS_CLASS = "cross"; // Class for X mark
 const CIRCLE_CLASS = "circle"; // Class for O mark
@@ -30,6 +23,10 @@ const WINNING_COMBINATIONS = [
     [0, 3, 6], [1, 4, 7], [2, 5, 8], // Verticals
     [0, 4, 8], [2, 4, 6] // Diagonals
 ];
+
+
+// Let the user choose to mute or unmute
+sound_button.addEventListener("click", toggle_sound);
 
 
 
@@ -56,16 +53,6 @@ function start_the_game() {
         cell.classList.remove(CIRCLE_CLASS, CROSS_CLASS, "won_cell"); // Clear cell classes
         cell.addEventListener("click", handle_clicks, { once: true }); // Handle cell clicks
     });
-}
-
-
-
-// Reset the scores after restarting the game
-function reset_scores() {
-    Xscore = 0;
-    Oscore = 0;
-    score_X.innerText = "-";
-    score_O.innerText = "-";
 }
 
 
@@ -148,20 +135,6 @@ function is_winner(current_turn) {
             return cells[index].classList.contains(current_turn);
         });
     });
-}
-
-
-
-// Update the score after each round
-function update_scores(circle_turn) {
-    if (circle_turn) {
-        Oscore ++;
-        score_O.innerText = Oscore;
-    }
-    else {
-        Xscore ++;
-        score_X.innerText = Xscore;
-    }
 }
 
 
