@@ -1,7 +1,7 @@
-import { click_sound_X, click_sound_O, winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
+import { winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
 import { score_button_O, score_button_X, reset_scores, update_scores } from "./JS/scores.js";
 import { CROSS_CLASS, CIRCLE_CLASS, is_winner, is_draw, highlight_winning_cells } from "./JS/rules.js";
-import { get_user_turn, choose_O, choose_X, circle_turn, swap_turn, update_turn_indicator } from "./JS/turns.js";
+import { get_user_turn, choose_O, choose_X, circle_turn, swap_turn, update_turn_indicator, place_the_mark } from "./JS/turns.js";
 
 
 
@@ -37,6 +37,7 @@ function start_the_game() {
 
     cells.forEach(cell => {        
         cell.classList.remove(CIRCLE_CLASS, CROSS_CLASS, "won_cell"); // Clear cell classes
+
         cell.addEventListener("click", handle_clicks, { once: true }); // Handle cell clicks
     });
 }
@@ -71,18 +72,7 @@ function handle_clicks(e) {
 
 
 
-// Add current player's mark (X or O) to the cell
-function place_the_mark(cell, current_turn) { 
-    cell.classList.add(current_turn); // Place the mark to the cell
 
-    // Play the sound of the current mark
-    if (current_turn === CROSS_CLASS) {
-        play_sound(click_sound_X, is_muted)
-    }
-    else {
-        play_sound(click_sound_O, is_muted);
-    }
-}
 
 
 
