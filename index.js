@@ -2,6 +2,7 @@ import { winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_bu
 import { score_button_O, score_button_X, reset_scores, update_scores } from "./JS/scores.js";
 import { CROSS_CLASS, CIRCLE_CLASS, is_winner, is_draw, highlight_winning_cells } from "./JS/rules.js";
 import { get_user_turn, choose_O, choose_X, circle_turn, swap_turn, update_turn_indicator, place_the_mark } from "./JS/turns.js";
+import { get_ai_move } from "./AI/ai_easy.js";
 
 
 
@@ -47,6 +48,7 @@ function start_the_game() {
 
 
 function handle_clicks(e) {
+    get_ai_move(cells);
     if (game_over) return; // Ignore if game is over
 
     // Disable user turn select by removing event listeners
@@ -96,3 +98,4 @@ function end_the_game(win, winning_cells = []) {
     // Add pointer events to the message after a delay
     setTimeout(() => { winning_message.style.pointerEvents = "all"; }, 800);
 }
+
