@@ -1,6 +1,6 @@
 import { click_sound_X, click_sound_O, winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
 import { score_button_O, score_button_X, reset_scores, update_scores } from "./JS/scores.js";
-import { CROSS_CLASS, CIRCLE_CLASS, ACTIVE_TURN, circle_turn, game_over, WINNING_COMBINATIONS } from "./JS/rules.js";
+import { CROSS_CLASS, CIRCLE_CLASS, ACTIVE_TURN, circle_turn, game_over, is_winner } from "./JS/rules.js";
 
 
 const cells = document.querySelectorAll(".cell");
@@ -8,6 +8,7 @@ const winning_message = document.querySelector(".winning_message");
 const winner_text = document.querySelector(".winning_message h1");
 const restart_button = document.querySelector(".restart_button");
 
+let game_over; // Tracks if the game is over
 
 
 // Let the user choose to mute or unmute
@@ -78,7 +79,7 @@ function handle_clicks(e) {
 
     place_the_mark(cell, current_turn); 
     
-    const winning_cells = is_winner(current_turn); // Check if current move is a winning move
+    const winning_cells = is_winner(cells, current_turn); // Check if current move is a winning move
     if (winning_cells) {
         end_the_game(true, winning_cells); // End game if there's a winner
     }
@@ -110,17 +111,6 @@ function place_the_mark(cell, current_turn) {
 
 // Switch turns between X and O
 function swap_turn() { circle_turn = !circle_turn; }
-
-
-
-// Check if any winning combination is met and return it
-function is_winner(current_turn) {
-    return WINNING_COMBINATIONS.find(combination => {
-        return combination.every(index => {
-            return cells[index].classList.contains(current_turn);
-        });
-    });
-}
 
 
 
