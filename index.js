@@ -1,6 +1,7 @@
 import { click_sound_X, click_sound_O, winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
 import { score_button_O, score_button_X, reset_scores, update_scores } from "./JS/scores.js";
 import { CROSS_CLASS, CIRCLE_CLASS, is_winner, is_draw, highlight_winning_cells } from "./JS/rules.js";
+import { get_user_turn, choose_O, choose_X, circle_turn, swap_turn } from "./JS/turns.js";
 
 
 const cells = document.querySelectorAll(".cell");
@@ -8,7 +9,6 @@ const winning_message = document.querySelector(".winning_message");
 const winner_text = document.querySelector(".winning_message h1");
 const restart_button = document.querySelector(".restart_button");
 
-let circle_turn = false; // Tracks if it's O's turn
 let game_over; // Tracks if the game is over
 
 
@@ -41,16 +41,6 @@ function start_the_game() {
         cell.addEventListener("click", handle_clicks, { once: true }); // Handle cell clicks
     });
 }
-
-
-
-// Get the first turn by the user click
-function get_user_turn() {
-    score_button_X.addEventListener("click", choose_X);
-    score_button_O.addEventListener("click", choose_O);
-}
-function choose_X() { circle_turn = false; update_turn_indicator(); }
-function choose_O() { circle_turn = true; update_turn_indicator(); }
 
 
 
@@ -108,11 +98,6 @@ function place_the_mark(cell, current_turn) {
         play_sound(click_sound_O, is_muted);
     }
 }
-
-
-
-// Switch turns between X and O
-function swap_turn() { circle_turn = !circle_turn; }
 
 
 
