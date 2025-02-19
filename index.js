@@ -1,5 +1,5 @@
 import { click_sound_X, click_sound_O, winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
-import { score_O, score_X, score_button_O, score_button_X, reset_scores } from "./scores.js";
+import { score_button_O, score_button_X, reset_scores, update_scores } from "./JS/scores.js";
 
 
 const cells = document.querySelectorAll(".cell");
