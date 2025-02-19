@@ -1,8 +1,9 @@
-import { click_sound_X, click_sound_O, winning_sound, draw_sound, play_sound, is_muted, toggle_sound } from "./Assets/Sounds/sounds.js";
+import { click_sound_X, click_sound_O, winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
 
+// Let the user choose to mute or unmute
+sound_button.addEventListener("click", toggle_sound);
 
 const cells = document.querySelectorAll(".cell");
-
 const winning_message = document.querySelector(".winning_message");
 const winner_text = document.querySelector(".winning_message h1");
 const restart_button = document.querySelector(".restart_button");
@@ -29,11 +30,6 @@ const WINNING_COMBINATIONS = [
     [0, 3, 6], [1, 4, 7], [2, 5, 8], // Verticals
     [0, 4, 8], [2, 4, 6] // Diagonals
 ];
-
-
-
-// Let the user choose the sound system
-document.querySelector(".sound_button").addEventListener("click", toggle_sound);
 
 
 
