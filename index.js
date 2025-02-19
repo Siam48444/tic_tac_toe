@@ -75,8 +75,8 @@ function end_the_game(win, winning_cells = []) {
     game_over = true; // Set game over to true
     
     if (win) {
-        const winner_class = circle_turn ? CIRCLE_CLASS : CROSS_CLASS; // Determine the winner class (cross or circle)
-        winning_message.classList.add(winner_class); // Show winning message
+        const current_turn = circle_turn ? CIRCLE_CLASS : CROSS_CLASS; // Determine the winner class (cross or circle)
+        winning_message.classList.add(current_turn); // Show winning message
         winner_text.innerText = "WINNER!"; 
 
         highlight_winning_cells(cells, winning_cells); 
