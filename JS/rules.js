@@ -27,3 +27,12 @@ export function is_draw(cells) {
         return ( cell.classList.contains(CROSS_CLASS) || cell.classList.contains(CIRCLE_CLASS) );
     });
 }
+
+
+
+// Highlight cells that form the winning combination
+export function highlight_winning_cells(cells, winning_cells) {
+    winning_cells.forEach(index => {
+        cells[index].classList.add("won_cell");
+    });
+}

@@ -1,6 +1,6 @@
 import { click_sound_X, click_sound_O, winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
 import { score_button_O, score_button_X, reset_scores, update_scores } from "./JS/scores.js";
-import { CROSS_CLASS, CIRCLE_CLASS, ACTIVE_TURN, is_winner, is_draw } from "./JS/rules.js";
+import { CROSS_CLASS, CIRCLE_CLASS, ACTIVE_TURN, is_winner, is_draw, highlight_winning_cells } from "./JS/rules.js";
 
 
 const cells = document.querySelectorAll(".cell");
@@ -116,15 +116,6 @@ function swap_turn() { circle_turn = !circle_turn; }
 
 
 
-// Highlight cells that form the winning combination
-function highlight_winning_cells(winning_cells) {
-    winning_cells.forEach(index => {
-        cells[index].classList.add("won_cell");
-    });
-}
-
-
-
 function end_the_game(win, winning_cells = []) {
     game_over = true; // Set game over to true
     
@@ -133,7 +124,7 @@ function end_the_game(win, winning_cells = []) {
         winning_message.classList.add(winner_class); // Show winning message
         winner_text.innerText = "WINNER!"; 
 
-        highlight_winning_cells(winning_cells); 
+        highlight_winning_cells(cells, winning_cells); 
         update_scores(circle_turn);
 
         play_sound(winning_sound, is_muted); // Play the winning sound
