@@ -8,8 +8,6 @@ export const WINNING_COMBINATIONS = [
     [0, 4, 8], [2, 4, 6] // Diagonals
 ];
 
-export let circle_turn = false; // Tracks if it's O's turn
-
 
 
 // Check if any winning combination is met and return it
@@ -18,5 +16,14 @@ export function is_winner(cells, current_turn) {
         return combination.every(index => {
             return cells[index].classList.contains(current_turn);
         });
+    });
+}
+
+
+
+// Check if all cells are filled without a winner
+export function is_draw(cells) {
+    return [...cells].every(cell => {
+        return ( cell.classList.contains(CROSS_CLASS) || cell.classList.contains(CIRCLE_CLASS) );
     });
 }

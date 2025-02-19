@@ -1,6 +1,6 @@
 import { click_sound_X, click_sound_O, winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
 import { score_button_O, score_button_X, reset_scores, update_scores } from "./JS/scores.js";
-import { CROSS_CLASS, CIRCLE_CLASS, ACTIVE_TURN, circle_turn, game_over, is_winner } from "./JS/rules.js";
+import { CROSS_CLASS, CIRCLE_CLASS, ACTIVE_TURN, is_winner, is_draw } from "./JS/rules.js";
 
 
 const cells = document.querySelectorAll(".cell");
@@ -8,6 +8,7 @@ const winning_message = document.querySelector(".winning_message");
 const winner_text = document.querySelector(".winning_message h1");
 const restart_button = document.querySelector(".restart_button");
 
+let circle_turn = false; // Tracks if it's O's turn
 let game_over; // Tracks if the game is over
 
 
@@ -80,10 +81,11 @@ function handle_clicks(e) {
     place_the_mark(cell, current_turn); 
     
     const winning_cells = is_winner(cells, current_turn); // Check if current move is a winning move
+
     if (winning_cells) {
         end_the_game(true, winning_cells); // End game if there's a winner
     }
-    else if (is_draw()) {
+    else if (is_draw(cells)) {
         end_the_game(false); // End game if it's a draw
     }
     else {
@@ -118,15 +120,6 @@ function swap_turn() { circle_turn = !circle_turn; }
 function highlight_winning_cells(winning_cells) {
     winning_cells.forEach(index => {
         cells[index].classList.add("won_cell");
-    });
-}
-
-
-
-// Check if all cells are filled without a winner
-function is_draw() {
-    return Array.from(cells).every(cell => {
-        return cell.classList.contains(CROSS_CLASS) || cell.classList.contains(CIRCLE_CLASS);
     });
 }
 
