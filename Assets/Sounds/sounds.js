@@ -20,6 +20,10 @@ export function toggle_sound() {
 
 // Function to play the sound
 export function play_sound(sound, is_muted = false) {
-    if (is_muted) { return; }
-    else { sound.play(); }
+    if (is_muted) { 
+        return; 
+    }
+    else { 
+        sound.play(); 
+    }
 }
