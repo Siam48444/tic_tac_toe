@@ -23,6 +23,38 @@
 }
 
 
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    background-color: var(--color_bg);
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0.8vmin;
+    height: 0.8vmin;
+}
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+    border-radius: 5em;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--color_main);
+    border-radius: 5em;
+}
+
+
 :root {
     --cell_width: clamp(4em, 16vmin, 15em);
 
@@ -135,38 +167,19 @@ body.lime {
     --color_main: #a7dd50;
     --color_sub: #6e787c;
 }
-
-
-*,
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body.mexican {
+    --color_bg: #f8ad34;
+    --color_main: #333333;
+    --color_sub: #f9b951;
+}
+body.miami {
+    --color_bg: #f35588;
+    --color_main: #05dfd7;
+    --color_sub: #db4979;
 }
 
-body,
-html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    position: relative;
-    background-color: var(--color_bg);
-    overflow-x: hidden;
-}
 
-::-webkit-scrollbar {
-    width: 0.5vmin;
-    height: 0.5vmin;
-}
-::-webkit-scrollbar-track {
-    background-color: #ffffff;
-    border-radius: 5em;
-}
-::-webkit-scrollbar-thumb {
-    background-color: var(--color_main);
-    border-radius: 5em;
-}
+
 
 
 

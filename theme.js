@@ -1,7 +1,7 @@
 const THEMES = [
     "default_light", "default_dark", "dollar", "serika_dark", "moonlight", 
     "retro", "carbon", "neon_ember", "cafe", "red", "darling", "discord",
-    "honey", "leather", "lime",
+    "honey", "leather", "lime", "mexican", "miami",
 ]
 
 const theme_button = document.querySelector(".theme_button");
