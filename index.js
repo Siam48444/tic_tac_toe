@@ -10,7 +10,7 @@ const winning_message = document.querySelector(".winning_message");
 const winner_text = document.querySelector(".winning_message h1");
 const restart_button = document.querySelector(".restart_button");
 
-let game_over; // Tracks if the game is over
+let game_over = false; // Tracks if the game is over
 
 
 // Let the user choose to mute or unmute
@@ -31,8 +31,6 @@ start_the_game();
 function start_the_game() {
     winning_message.classList.remove(CROSS_CLASS, CIRCLE_CLASS, "show_draw"); // Hide winning message
     winning_message.style.pointerEvents = "none"; // Remove pointer events to the message after a delay
-
-    game_over = false; // Reset game over state
 
     get_user_turn(); // Let the user choose the first mark
     update_turn_indicator(); // Indicate the user turn graphically 
