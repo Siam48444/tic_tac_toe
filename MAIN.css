@@ -177,6 +177,11 @@ body.miami {
     --color_main: #05dfd7;
     --color_sub: #db4979;
 }
+body.miami_nights {
+    --color_bg: #18181a;
+    --color_main: #05dfd7;
+    --color_sub: #272729;
+}
 
 
 
