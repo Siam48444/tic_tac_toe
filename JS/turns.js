@@ -23,7 +23,9 @@ export function choose_O() {
 
 
 // Switch turns between X and O
-export function swap_turn() { circle_turn = !circle_turn; }
+export function swap_turn() { 
+    circle_turn = !circle_turn; 
+}
 
 
 
