@@ -30,6 +30,12 @@ export function swap_turn() {
 }
 
 
+// Resets the turn to X
+export function reset_turn() {
+    circle_turn = false;
+}
+
+
 
 // Indicate the user turn graphically
 export function update_turn_indicator() {

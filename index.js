@@ -1,7 +1,7 @@
 import { winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
 import { score_button_O, score_button_X, reset_scores, update_scores } from "./JS/scores.js";
 import { CROSS_CLASS, CIRCLE_CLASS, is_winner, is_draw, highlight_winning_cells } from "./JS/rules.js";
-import { get_user_turn, choose_O, choose_X, circle_turn, swap_turn, update_turn_indicator, place_the_mark } from "./JS/turns.js";
+import { get_user_turn, choose_O, choose_X, circle_turn, swap_turn, update_turn_indicator, place_the_mark, reset_turn } from "./JS/turns.js";
 import { get_ai_move, place_ai_move } from "./AI/ai_easy.js";
 
 
@@ -111,11 +111,12 @@ export function end_the_game(win, winning_cells = []) {
 
 
 
-// AI mode toggleer
+// AI mode toggler
 ai_toggle_button.addEventListener("click", () => {
     ai_enabled = !ai_enabled;
     ai_toggle_button.innerText = ai_enabled ? "Play vs Human" : "Play vs AI";
 
+    reset_turn();
     reset_scores();
     start_the_game(); 
 });
