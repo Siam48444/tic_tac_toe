@@ -1,4 +1,5 @@
 import { CIRCLE_CLASS, CROSS_CLASS } from "../JS/rules.js";
+import { circle_turn } from "../JS/turns.js";
 
 
 export function get_ai_move(cells) {
