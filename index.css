@@ -299,40 +299,37 @@ main {
     border: none;
     border-radius: 50%;
     aspect-ratio: 1;
-    padding: clamp(1.25em, 2.2vmin, 2.7em);
+    padding: clamp(0.5em, 1vmin, 1.5em);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     
     transition: box-shadow var(--transition_duration_fast);
 }
 
-.sound_button > svg {
-    position: absolute;
+.sound_button > .sound_svg {
     fill: var(--color_main);
-    width: calc(var(--button_font_size) * 2.5);
+    width: calc(var(--button_font_size) * 1.6);
 }
 
 /* Sound enabled condition */
-.sound_button > svg > #sound_muted_line {
+.sound_button > .sound_svg > #sound_muted_line {
     stroke: var(--color_main);
     stroke-width: 2;
     fill: none;
-    stroke-dasharray: 55;
-    stroke-dashoffset: 55;
+
+    --stroke_dash_sound: 30;
+    stroke-dasharray: var(--stroke_dash_sound);
+    stroke-dashoffset: var(--stroke_dash_sound);
 
     transition: stroke-dashoffset var(--transition_duration_fast);
 }
-/* .sound_button > .sound_muted_svg { display: none; } */
 
-/* Sound svgs for muted condition */
-.sound_button.muted > svg > #sound_muted_line {
+/* Sound svg for muted condition */
+.sound_button.muted > .sound_svg > #sound_muted_line {
     stroke-dashoffset: 0;
 }
-/* .sound_button.muted > .sound_muted_svg { display: inline; }
-.sound_button.muted > .sound_svg { display: none; } */
 
 
 /* Theme palettes */
