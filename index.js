@@ -83,7 +83,7 @@ function handle_clicks(e) {
         swap_turn(); 
         update_turn_indicator();
 
-        if ( ai_enabled ) {
+        if ( ai_enabled && circle_turn ) {
             place_ai_move(cells);
         }        
     }
