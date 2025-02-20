@@ -42,5 +42,5 @@ export function place_ai_move(cells) {
                 update_turn_indicator();
             }
         }
-    }, 500);
+    }, 300);
 }

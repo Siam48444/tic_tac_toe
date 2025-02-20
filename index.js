@@ -23,14 +23,6 @@ sound_button.addEventListener("click", toggle_sound);
 
 
 
-ai_toggle_button.addEventListener("click", () => {
-    ai_enabled = !ai_enabled; // Toggle AI mode
-    ai_toggle_button.innerText = ai_enabled ? "Play vs Human" : "Play vs AI";
-    start_the_game(); // Restart the game when switching modes
-});
-
-
-
 // Start the game by user clicks
 winning_message.addEventListener("click", start_the_game); // Start the next round
 restart_button.addEventListener("click", () => { // Reset the scores and restart the game
@@ -59,7 +51,7 @@ function start_the_game() {
 
 
 
-function handle_clicks(e) {
+export function handle_clicks(e) {
     get_ai_move(cells);
     if (game_over) return null; // Ignore if game is over
 
@@ -81,11 +73,12 @@ function handle_clicks(e) {
     }
     else {
         swap_turn(); 
-        update_turn_indicator();
+        update_turn_indicator();      
+    }
 
-        if ( ai_enabled && circle_turn ) {
-            place_ai_move(cells);
-        }        
+
+    if (circle_turn && ai_enabled) {
+        place_ai_move(cells);
     }
 }
 
@@ -115,3 +108,13 @@ export function end_the_game(win, winning_cells = []) {
     setTimeout(() => { winning_message.style.pointerEvents = "all"; }, 800);
 }
 
+
+
+// AI mode toggleer
+ai_toggle_button.addEventListener("click", () => {
+    ai_enabled = !ai_enabled;
+    ai_toggle_button.innerText = ai_enabled ? "Play vs Human" : "Play vs AI";
+
+    reset_scores();
+    start_the_game(); 
+});
