@@ -319,9 +319,9 @@ main {
     stroke-width: 2;
     fill: none;
 
-    --stroke_dash_sound: 30;
-    stroke-dasharray: var(--stroke_dash_sound);
-    stroke-dashoffset: var(--stroke_dash_sound);
+    --sound_stroke_dash: 30;
+    stroke-dasharray: var(--sound_stroke_dash);
+    stroke-dashoffset: var(--sound_stroke_dash);
 
     transition: stroke-dashoffset var(--transition_duration_fast);
 }
