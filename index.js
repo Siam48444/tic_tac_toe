@@ -2,7 +2,7 @@ import { winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_bu
 import { score_button_O, score_button_X, reset_scores, update_scores } from "./JS/scores.js";
 import { CROSS_CLASS, CIRCLE_CLASS, is_winner, is_draw, highlight_winning_cells } from "./JS/rules.js";
 import { get_user_turn, choose_O, choose_X, circle_turn, swap_turn, update_turn_indicator, place_the_mark } from "./JS/turns.js";
-import { get_ai_move } from "./AI/ai_easy.js";
+import { get_ai_move, place_ai_move } from "./AI/ai_easy.js";
 
 
 
@@ -83,8 +83,9 @@ function handle_clicks(e) {
         swap_turn(); 
         update_turn_indicator();
 
-
-        
+        if ( ai_enabled ) {
+            place_ai_move(cells);
+        }        
     }
 }
 
