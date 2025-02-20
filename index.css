@@ -378,10 +378,8 @@ main {
     color: var(--color_main);
 }
 
-.theme_top_head > .cross_svg {
-    fill: none;
-    stroke: var(--color_main);
-    stroke-width: var(--mark_thickness);
+.theme_top_head > svg {
+    fill: var(--color_main);
     width: var(--theme_head_font_size);
     cursor: pointer;
 }
