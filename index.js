@@ -19,10 +19,9 @@ let ai_enabled = false; // Check if AI is playing
 
 
 // AI mode toggler
-mode_selection.addEventListener("click", () => {
-    let selectedValue = this.value;
-
-    if (selectedValue === "Easy") {
+mode_selection.addEventListener("change", () => {
+    if ( this.value === "easy" ) {
+        alert();
         ai_enabled = !ai_enabled;
     
         reset_turn();
