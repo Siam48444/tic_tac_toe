@@ -13,7 +13,7 @@ const restart_button = document.querySelector(".restart_button");
 
 let game_over = false; // Tracks if the game is over
 
-const ai_toggle_button = document.querySelector(".ai_toggle");
+const easy_ai_option = document.querySelector("[data-easy-ai-option]");
 let ai_enabled = false; // Check if AI is playing
 
 
@@ -112,9 +112,9 @@ export function end_the_game(win, winning_cells = []) {
 
 
 // AI mode toggler
-ai_toggle_button.addEventListener("click", () => {
+easy_ai_option.addEventListener("click", () => {
     ai_enabled = !ai_enabled;
-    ai_toggle_button.innerText = ai_enabled ? "Play vs Human" : "Play vs AI";
+    easy_ai_option.innerText = ai_enabled ? "Play vs Human" : "Play vs AI";
 
     reset_turn();
     reset_scores();
