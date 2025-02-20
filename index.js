@@ -13,8 +13,24 @@ const restart_button = document.querySelector(".restart_button");
 
 let game_over = false; // Tracks if the game is over
 
-const easy_ai_option = document.querySelector("[data-easy-ai-option]");
+const mode_selection = document.querySelector(".mode_selection");
 let ai_enabled = false; // Check if AI is playing
+
+
+
+// AI mode toggler
+mode_selection.addEventListener("click", () => {
+    let selectedValue = this.value;
+
+    if (selectedValue === "Easy") {
+        ai_enabled = !ai_enabled;
+    
+        reset_turn();
+        reset_scores();
+        start_the_game(); 
+    }
+
+});
 
 
 
@@ -111,12 +127,3 @@ export function end_the_game(win, winning_cells = []) {
 
 
 
-// AI mode toggler
-easy_ai_option.addEventListener("click", () => {
-    ai_enabled = !ai_enabled;
-    easy_ai_option.innerText = ai_enabled ? "Play vs Human" : "Play vs AI";
-
-    reset_turn();
-    reset_scores();
-    start_the_game(); 
-});
