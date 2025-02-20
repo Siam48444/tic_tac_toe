@@ -42,8 +42,8 @@ html {
 }
 
 ::-webkit-scrollbar {
-    width: 0.8vmin;
-    height: 0.8vmin;
+    width: 1vmin;
+    height: 1vmin;
 }
 ::-webkit-scrollbar-track {
     background-color: #ffffff;

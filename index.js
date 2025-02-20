@@ -49,7 +49,7 @@ function start_the_game() {
 
 function handle_clicks(e) {
     get_ai_move(cells);
-    if (game_over) return; // Ignore if game is over
+    if (game_over) return null; // Ignore if game is over
 
     // Disable user turn select by removing event listeners
     score_button_X.removeEventListener("click", choose_X);
