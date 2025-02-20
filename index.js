@@ -13,9 +13,21 @@ const restart_button = document.querySelector(".restart_button");
 
 let game_over = false; // Tracks if the game is over
 
+const ai_toggle_button = document.querySelector(".ai_toggle");
+let ai_enabled = false; // Check if AI is playing
+
+
 
 // Let the user choose to mute or unmute
 sound_button.addEventListener("click", toggle_sound);
+
+
+
+ai_toggle_button.addEventListener("click", () => {
+    ai_enabled = !ai_enabled; // Toggle AI mode
+    ai_toggle_button.innerText = ai_enabled ? "Play vs Human" : "Play vs AI";
+    start_the_game(); // Restart the game when switching modes
+});
 
 
 
