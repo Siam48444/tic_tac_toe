@@ -82,6 +82,31 @@ function handle_clicks(e) {
     else {
         swap_turn(); 
         update_turn_indicator();
+
+
+        // If AI is enabled and it's now AI's turn, make AI move
+        if (ai_enabled && circle_turn) {
+            setTimeout(() => {
+                const ai_cell = get_ai_move(cells);
+
+                if (ai_cell) {
+                    place_the_mark(ai_cell, CIRCLE_CLASS);
+
+                    if (is_winner(cells, CIRCLE_CLASS)) {
+                        end_the_game(true, is_winner(cells, CIRCLE_CLASS));
+                        return null;
+                    }
+                    else if (is_draw(cells)) {
+                        end_the_game(false);
+                        return null;
+                    }
+                    else {
+                        swap_turn();
+                        update_turn_indicator();
+                    }
+                }
+            }, 500);
+        }
     }
 }
 
