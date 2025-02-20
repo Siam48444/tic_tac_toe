@@ -316,11 +316,23 @@ main {
 }
 
 /* Sound enabled condition */
-.sound_button > .sound_muted_svg { display: none; }
+.sound_button > svg > #sound_muted_line {
+    stroke: var(--color_main);
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 55;
+    stroke-dashoffset: 55;
+
+    transition: stroke-dashoffset var(--transition_duration_fast);
+}
+/* .sound_button > .sound_muted_svg { display: none; } */
 
 /* Sound svgs for muted condition */
-.sound_button.muted > .sound_muted_svg { display: inline; }
-.sound_button.muted > .sound_svg { display: none; }
+.sound_button.muted > svg > #sound_muted_line {
+    stroke-dashoffset: 0;
+}
+/* .sound_button.muted > .sound_muted_svg { display: inline; }
+.sound_button.muted > .sound_svg { display: none; } */
 
 
 /* Theme palettes */
