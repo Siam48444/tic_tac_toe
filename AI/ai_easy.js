@@ -13,9 +13,6 @@ export function get_ai_move(cells) {
 
     // Choose a random available cell
     const random_index = Math.floor(Math.random() * available_cells.length);
-    const ai_cell = available_cells[random_index];
-
-    setTimeout(() => {
-        ai_cell.click();
-    }, 500);
+    
+    return available_cells[random_index];
 }

@@ -223,6 +223,20 @@ main {
     position: relative;
 }
 
+.ai_button {
+    background-color: red;
+    width: 100%;
+    padding: var(--button_padding);
+    background-color: var(--color_sub);
+    outline: none;
+    border: none;
+    border-radius: var(--button_border_radius);
+    cursor: pointer;
+    font-family: "Inter_Medium";
+    font-size: var(--button_font_size);
+    color: var(--color_main);
+}
+
 .scoreboard {
     display: flex;
     align-items: center;
