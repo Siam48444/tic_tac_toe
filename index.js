@@ -70,6 +70,11 @@ function handle_clicks(e) {
     else {
         swap_turn(); 
         update_turn_indicator();
+
+        // AI makes a move after player (if game is still running)
+        if ( !game_over ) {
+            get_ai_move(cells);
+        }
     }
 }
 
