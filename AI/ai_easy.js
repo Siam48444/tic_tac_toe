@@ -10,5 +10,7 @@ export function get_ai_move(cells) {
     // No move if the board is full
     if (available_cells.length === 0) return null;
 
-    console.log(Math.random());
+    // Choose a random available cell
+    const random_index = Math.floor(Math.random() * available_cells.length);
+    const ai_cell = available_cells[random_index];
 }
