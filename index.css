@@ -312,7 +312,7 @@ main {
 .sound_button > svg {
     position: absolute;
     fill: var(--color_main);
-    width: calc(var(--button_font_size) * 2.8);
+    width: calc(var(--button_font_size) * 2.5);
 }
 
 /* Sound enabled condition */
