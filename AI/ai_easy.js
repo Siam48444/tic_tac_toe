@@ -1,5 +1,5 @@
 import { CIRCLE_CLASS, CROSS_CLASS } from "../JS/rules.js";
-import { circle_turn, place_the_mark, swap_turn, update_turn_indicator } from "../JS/turns.js";
+import { place_the_mark, swap_turn, update_turn_indicator } from "../JS/turns.js";
 import { is_draw, is_winner } from "../JS/rules.js";
 import { end_the_game } from "../index.js";
 
@@ -22,7 +22,6 @@ export function get_ai_move(cells) {
 
 
 export function place_ai_move(cells) {
-    // If AI is enabled and it's now AI's turn, make AI move
     setTimeout(() => {
         const ai_cell = get_ai_move(cells);
 
@@ -42,5 +41,5 @@ export function place_ai_move(cells) {
                 update_turn_indicator();
             }
         }
-    }, 300);
+    }, 100);
 }

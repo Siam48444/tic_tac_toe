@@ -77,6 +77,7 @@ export function handle_clicks(e) {
     }
 
 
+
     if (circle_turn && ai_enabled) {
         place_ai_move(cells);
     }
