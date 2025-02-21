@@ -120,9 +120,8 @@ export function handle_clicks(e) {
     }
 
 
-
     // Place AI marks (if enabled)
-    if (easy_ai_enabled) {
+    if (easy_ai_enabled && !game_over) {
         place_easy_ai_move(cells);
     }
 }
