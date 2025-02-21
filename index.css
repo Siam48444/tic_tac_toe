@@ -223,12 +223,25 @@ main {
     position: relative;
 }
 
-.mode_selection {
+.custom_select {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     gap: 0.5em;
+    position: relative;
+}
+
+.custom_select > svg {
+    fill: var(--color_main);
+    width: calc(var(--button_font_size) * 0.8);
+    position: absolute;
+    right: clamp(1em, 2vmin, 2.6em);
+    pointer-events: none;
+}
+
+.mode_selection {
+    width: 100%;
     padding: var(--button_padding);
     background-color: var(--color_sub);
     outline: none;
@@ -249,11 +262,6 @@ main {
 /* Hide default arrow in IE/Edge */
 .mode_selection::-ms-expand { 
     display: none;
-}
-
-.mode_selection > svg {
-    fill: var(--color_main);
-    width: var(--button_font_size);
 }
 
 
