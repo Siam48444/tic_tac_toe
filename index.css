@@ -224,7 +224,11 @@ main {
 }
 
 .mode_selection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
+    gap: 0.5em;
     padding: var(--button_padding);
     background-color: var(--color_sub);
     outline: none;
@@ -246,6 +250,12 @@ main {
 .mode_selection::-ms-expand { 
     display: none;
 }
+
+.mode_selection > svg {
+    fill: var(--color_main);
+    width: var(--button_font_size);
+}
+
 
 .scoreboard {
     display: flex;
