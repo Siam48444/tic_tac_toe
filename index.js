@@ -13,20 +13,16 @@ const restart_button = document.querySelector(".restart_button");
 
 let game_over = false; // Tracks if the game is over
 
-const mode_selection = document.querySelector(".mode_selection");
+const mode_selection = document.getElementById("mode_selection");
 let ai_enabled = false; // Check if AI is playing
 
 
 
-// AI mode toggler
-mode_selection.addEventListener("change", () => {
-    if ( this.value === "easy" ) {
+mode_selection.addEventListener("change", (e) => {
+    let mode = e.target.value;
+
+    if (mode === "easy") {
         alert();
-        ai_enabled = !ai_enabled;
-    
-        reset_turn();
-        reset_scores();
-        start_the_game(); 
     }
 
 });
@@ -93,9 +89,7 @@ export function handle_clicks(e) {
 
 
 
-    if (circle_turn && ai_enabled) {
-        place_ai_move(cells);
-    }
+    
 }
 
 
