@@ -235,7 +235,16 @@ main {
     font-size: var(--button_font_size);
     color: var(--color_main);
 
+    appearance: none;
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+
     transition: box-shadow var(--transition_duration_fast);
+}
+
+/* Hide default arrow in IE/Edge */
+.mode_selection::-ms-expand { 
+    display: none;
 }
 
 .scoreboard {
