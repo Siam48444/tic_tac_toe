@@ -35,7 +35,6 @@ mode_selection.addEventListener("change", (e) => {
         reset_turn();
         start_the_game();
     }
-
 });
 
 
@@ -107,6 +106,7 @@ export function handle_clicks(e) {
         winning_message.addEventListener("click", () => {
             start_the_game();
             reset_turn();
+            disable_turn_selection();
         }); 
     }
 }
