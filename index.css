@@ -234,7 +234,7 @@ main {
 
 .custom_select > svg {
     fill: var(--color_main);
-    width: calc(var(--button_font_size) * 0.8);
+    width: calc(var(--button_font_size) * 0.7);
     position: absolute;
     right: clamp(1em, 2vmin, 2.6em);
     pointer-events: none;
