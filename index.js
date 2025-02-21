@@ -18,11 +18,14 @@ let ai_enabled = false; // Check if AI is playing
 
 
 
+// Game mode selection
 mode_selection.addEventListener("change", (e) => {
     let mode = e.target.value;
 
     if (mode === "easy") {
-        alert();
+        reset_scores();
+        reset_turn();
+        start_the_game();
     }
 
 });
