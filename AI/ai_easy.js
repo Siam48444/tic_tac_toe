@@ -4,7 +4,7 @@ import { is_draw, is_winner } from "../JS/rules.js";
 import { end_the_game } from "../index.js";
 
 
-export function get_ai_move(cells) {
+export function get_easy_ai_move(cells) {
     // Get all available (empty) cells
     const available_cells = [...cells].filter(cell => {
         return !cell.classList.contains(CROSS_CLASS) && !cell.classList.contains(CIRCLE_CLASS);
@@ -21,9 +21,9 @@ export function get_ai_move(cells) {
 
 
 
-export function place_ai_move(cells) {
+export function place_easy_ai_move(cells) {
     setTimeout(() => {
-        const ai_cell = get_ai_move(cells);
+        const ai_cell = get_easy_ai_move(cells);
 
         if (ai_cell) {
             place_the_mark(ai_cell, CIRCLE_CLASS);
