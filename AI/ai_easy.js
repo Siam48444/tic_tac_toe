@@ -21,25 +21,24 @@ export function get_easy_ai_move(cells) {
 
 
 
+// Place the easy ai move
 export function place_easy_ai_move(cells) {
-    setTimeout(() => {
-        const ai_cell = get_easy_ai_move(cells);
+    const ai_cell = get_easy_ai_move(cells);
 
-        if (ai_cell) {
-            place_the_mark(ai_cell, CIRCLE_CLASS);
+    if (ai_cell) {
+        place_the_mark(ai_cell, CIRCLE_CLASS);
 
-            if (is_winner(cells, CIRCLE_CLASS)) {
-                end_the_game(true, is_winner(cells, CIRCLE_CLASS));
-                return null;
-            }
-            else if (is_draw(cells)) {
-                end_the_game(false);
-                return null;
-            }
-            else {
-                swap_turn();
-                update_turn_indicator();
-            }
+        const ai_winning_cells = is_winner(cells, CIRCLE_CLASS);
+
+        if (ai_winning_cells) {
+            end_the_game(true, ai_winning_cells);
         }
-    }, 100);
+        else if (is_draw(cells)) {
+            end_the_game(false);
+        }
+        else {
+            swap_turn();
+            update_turn_indicator();
+        }
+    }
 }

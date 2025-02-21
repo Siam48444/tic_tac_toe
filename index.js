@@ -12,11 +12,10 @@ const winner_text = document.querySelector(".winning_message h1");
 const restart_button = document.querySelector(".restart_button");
 
 let game_over = false; // Tracks if the game is over
-
+ 
+ 
+ 
 const mode_selection = document.getElementById("mode_selection");
-let ai_enabled = false; // Check if AI is playing
-
-
 
 // Game mode selection
 mode_selection.addEventListener("change", (e) => {
@@ -26,6 +25,7 @@ mode_selection.addEventListener("change", (e) => {
         reset_scores();
         reset_turn();
         start_the_game();
+        place_easy_ai_move(cells);
     }
 
 });
@@ -47,7 +47,7 @@ restart_button.addEventListener("click", () => { // Reset the scores and restart
 
 
 start_the_game(); 
-function start_the_game() {
+export function start_the_game() {
     winning_message.classList.remove(CROSS_CLASS, CIRCLE_CLASS, "show_draw"); // Hide winning message
     winning_message.style.pointerEvents = "none"; // Remove pointer events to the message after a delay
 

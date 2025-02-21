@@ -32,7 +32,9 @@ export function swap_turn() {
 
 // Resets the turn to X
 export function reset_turn() {
-    circle_turn = false;
+    if (circle_turn) {
+        circle_turn = false;
+    } 
 }
 
 
