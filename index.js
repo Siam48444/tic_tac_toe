@@ -15,10 +15,10 @@ let game_over = false; // Tracks if the game is over
  
  
  
+// Game mode selection
 const mode_selection = document.getElementById("mode_selection");
 let easy_ai_enabled = false;
 
-// Game mode selection
 mode_selection.addEventListener("change", (e) => {
     let mode = e.target.value;
     
