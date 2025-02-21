@@ -27,6 +27,7 @@ mode_selection.addEventListener("change", (e) => {
         reset_scores();
         reset_turn();
         start_the_game();
+        disable_turn_selection();
     }
 
 });
