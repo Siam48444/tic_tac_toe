@@ -92,9 +92,10 @@ export function handle_clicks(e) {
 
 
 
+    // AI mode selection
     if (easy_ai_enabled) {
         place_easy_ai_move(cells);
-        
+
         winning_message.addEventListener("click", () => {
             start_the_game();
             reset_turn();
