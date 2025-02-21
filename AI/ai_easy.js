@@ -34,9 +34,11 @@ export function place_easy_ai_move(cells) {
 
             if (ai_winning_cells) {
                 end_the_game(true, ai_winning_cells);
+                return null;
             }
             else if (is_draw(cells)) {
                 end_the_game(false);
+                return null;
             }
             else {
                 swap_turn();

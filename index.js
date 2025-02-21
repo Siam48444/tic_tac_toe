@@ -29,6 +29,12 @@ mode_selection.addEventListener("change", (e) => {
         start_the_game();
         disable_turn_selection();
     }
+    else if (mode === "two players") {
+        easy_ai_enabled = false;
+        reset_scores();
+        reset_turn();
+        start_the_game();
+    }
 
 });
 
@@ -81,9 +87,11 @@ export function handle_clicks(e) {
 
     if (winning_cells) {
         end_the_game(true, winning_cells); // End game if there's a winner
+        return null;
     }
     else if (is_draw(cells)) {
         end_the_game(false); // End game if it's a draw
+        return null;
     }
     else {
         swap_turn(); 
