@@ -100,7 +100,7 @@ export function handle_clicks(e) {
 
 
 
-    // AI mode selection
+    // Place AI marks
     if (easy_ai_enabled) {
         place_easy_ai_move(cells);
 
