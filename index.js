@@ -2,8 +2,8 @@ import { winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_bu
 import { reset_scores, update_scores } from "./JS/scores.js";
 import { CROSS_CLASS, CIRCLE_CLASS, is_winner, is_draw, highlight_winning_cells } from "./JS/rules.js";
 import { disable_turn_selection, get_user_turn, circle_turn, swap_turn, update_turn_indicator, place_the_mark } from "./JS/turns.js";
-import { place_easy_ai_move } from "./AI/ai_easy.js";
-import { initialize_mode_selection } from "./AI/mode_selectoin.js";
+// import { place_easy_ai_move } from "./AI/ai_easy.js";
+// import { initialize_mode_selection } from "./AI/mode_selectoin.js";
 
 
 
@@ -13,6 +13,19 @@ const winner_text = document.querySelector(".winning_message h1");
 const restart_button = document.querySelector(".restart_button");
 
 let game_over = false; // Tracks if the game is over
+
+
+
+// Game mode selection
+const mode_selection = document.getElementById("mode_selection");
+let mode = "two players"; // Keeps track of the game mode
+let ai_enabled = false; // Tracks if AI is enabled
+
+mode_selection.addEventListener("change", e => {
+    mode = e.target.value; 
+    ai_enabled = (mode !== "two players"); // Check if ai mode is enabled
+});
+
 
 
 
@@ -105,6 +118,3 @@ export function end_the_game(win, winning_cells = []) {
 }
 
 
-
-// Game mode selection
-initialize_mode_selection();
