@@ -25,27 +25,28 @@ mode_selection.addEventListener("change", e => {
     mode = e.target.value; // Set the game mode 
     ai_enabled = (mode !== "two players"); // Check if ai mode is enabled
 
+    reset_scores();
+    reset_turn();
+
     // Usual settings for ai mode
     if (ai_enabled) {
-        reset_scores();
-        reset_turn();
         disable_turn_selection();
         start_the_game();
         
         // Start the next round
         winning_message.addEventListener("click", () => { 
-            disable_turn_selection();
             start_the_game();
         });
         
         // Reset the scores and restart the game
         restart_button.addEventListener("click", () => {
-            disable_turn_selection();
             reset_scores(); 
             reset_turn();
             start_the_game(); 
         }); 
-
+    }
+    else {
+        get_user_turn();
     }
 });
 
@@ -73,7 +74,12 @@ export function start_the_game() {
 
     game_over = false; // Reset the game over state
 
-    get_user_turn(); // Let the user choose the first mark
+    if (!ai_enabled) {
+        get_user_turn(); // Only allow user to select turn in two-player mode
+    } else {
+        disable_turn_selection(); // Ensure turn selection is disabled in AI mode
+    }
+
     update_turn_indicator(); // Indicate the user turn graphically 
 
     cells.forEach(cell => {        
