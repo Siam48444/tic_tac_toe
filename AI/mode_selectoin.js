@@ -1,6 +1,8 @@
 import { reset_scores } from "../JS/scores.js";
 import { disable_turn_selection, reset_turn } from "../JS/turns.js";
 import { start_the_game } from "../index.js";
+import { place_easy_ai_move } from "./ai_easy.js";
+import { cells } from "../index.js";
 
 
 
@@ -12,13 +14,15 @@ export function initialize_mode_selection() {
         let mode = e.target.value;
         ai_enabled = (mode !== "two players");
     
-        start_the_game();
-        reset_scores();
-        reset_turn();
-
+        
+        if (mode === "easy") place_easy_ai_move(cells);
+        
         
         // Usual settings for ai mode
         if (ai_enabled) {
+            start_the_game();
+            reset_scores();
+            reset_turn();
             disable_turn_selection();
             
             // Start the next round

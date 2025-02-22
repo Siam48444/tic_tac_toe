@@ -7,7 +7,7 @@ import { initialize_mode_selection } from "./AI/mode_selectoin.js";
 
 
 
-const cells = document.querySelectorAll(".cell");
+export const cells = document.querySelectorAll(".cell");
 const winning_message = document.querySelector(".winning_message");
 const winner_text = document.querySelector(".winning_message h1");
 const restart_button = document.querySelector(".restart_button");
