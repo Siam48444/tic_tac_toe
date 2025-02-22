@@ -3,7 +3,6 @@ import { reset_scores, update_scores } from "./JS/scores.js";
 import { CROSS_CLASS, CIRCLE_CLASS, is_winner, is_draw, highlight_winning_cells } from "./JS/rules.js";
 import { disable_turn_selection, get_user_turn, circle_turn, swap_turn, update_turn_indicator, place_the_mark, reset_turn } from "./JS/turns.js";
 import { place_easy_ai_move } from "./AI/ai_easy.js";
-// import { initialize_mode_selection } from "./AI/mode_selectoin.js";
 
 
 
@@ -24,13 +23,15 @@ let ai_enabled = false; // Tracks if AI is enabled
 mode_selection.addEventListener("change", e => {
     mode = e.target.value; // Set the game mode 
     ai_enabled = (mode !== "two players"); // Check if ai mode is enabled
+    
 
+    // Usual settings after changing modes
     reset_scores();
     reset_turn();
 
     // Usual settings for ai mode
     if (ai_enabled) {
-        disable_turn_selection();
+        disable_turn_selection(); // Disable turn selection in AI mode
         start_the_game();
         
         // Start the next round
@@ -46,7 +47,7 @@ mode_selection.addEventListener("change", e => {
         }); 
     }
     else {
-        get_user_turn();
+        get_user_turn(); // Re-enable turn selection in Two-Player mode
     }
 });
 
@@ -116,7 +117,6 @@ export function handle_clicks(e) {
         swap_turn(); 
         update_turn_indicator();      
     }
-
 
 
     // Place ai moves 
