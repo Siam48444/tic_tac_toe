@@ -36,6 +36,7 @@ mode_selection.addEventListener("change", e => {
         
         // Start the next round
         winning_message.addEventListener("click", () => { 
+            reset_turn();
             start_the_game();
         });
         
@@ -93,7 +94,7 @@ export function start_the_game() {
 
 
 export function handle_clicks(e) {
-    if (game_over) return null; // Ignore if game is over
+    if (game_over) return; // Ignore if game is over
 
     // Disable user turn select by removing event listeners
     disable_turn_selection();
@@ -107,11 +108,11 @@ export function handle_clicks(e) {
 
     if (winning_cells) {
         end_the_game(true, winning_cells); // End game if there's a winner
-        return null;
+        return;
     }
     else if (is_draw(cells)) {
         end_the_game(false); // End game if it's a draw
-        return null;
+        return;
     }
     else {
         swap_turn(); 
@@ -120,7 +121,7 @@ export function handle_clicks(e) {
 
 
     // Place ai moves 
-    if (mode === "easy") place_easy_ai_move(cells);
+    if (mode === "easy" && circle_turn) place_easy_ai_move(cells);
 }
 
 
