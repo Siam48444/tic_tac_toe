@@ -16,11 +16,6 @@ let game_over = false; // Tracks if the game is over
 
 
 
-// Game mode selection
-initialize_mode_selection();
-
-
-
 // Let the user choose to mute or unmute
 sound_button.addEventListener("click", toggle_sound);
 
@@ -115,3 +110,5 @@ export function end_the_game(win, winning_cells = []) {
 
 
 
+// Game mode selection
+initialize_mode_selection();

@@ -4,13 +4,11 @@ import { start_the_game } from "../index.js";
 
 
 
+let easy_ai_enabled = false;
+
 
 export function initialize_mode_selection() {
-    const mode_selection = document.getElementById("mode_selection");
-    let easy_ai_enabled = false;
-
-
-    mode_selection.addEventListener("change", e => {
+    document.getElementById("mode_selection").addEventListener("change", e => {
         let mode = e.target.value;
     
         if (mode === "easy") {
