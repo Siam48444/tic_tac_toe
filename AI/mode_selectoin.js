@@ -4,7 +4,8 @@ import { start_the_game } from "../index.js";
 
 
 
-let easy_ai_enabled = false;
+let mode = "easy";
+let ai_enabled = false;
 
 
 export function initialize_mode_selection() {
@@ -12,6 +13,8 @@ export function initialize_mode_selection() {
         let mode = e.target.value;
     
         if (mode === "easy") {
+            ai_enabled = true;
+
             easy_ai_enabled = true;
             start_the_game();
             reset_scores();
@@ -26,7 +29,7 @@ export function initialize_mode_selection() {
         
         
         // Usual settings for ai mode
-        if (mode !== "two players") {
+        if (ai_enabled) {
             disable_turn_selection();
             
             // Start the next round
