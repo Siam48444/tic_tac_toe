@@ -35,8 +35,10 @@ mode_selection.addEventListener("change", e => {
         
         // Start the next round
         winning_message.addEventListener("click", () => { 
-            reset_turn();
             start_the_game();
+            
+            // AI plays first if it won the last round
+            if (circle_turn) place_easy_ai_move(cells); 
         });
         
         // Reset the scores and restart the game
