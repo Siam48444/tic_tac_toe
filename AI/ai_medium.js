@@ -3,6 +3,8 @@ import { place_the_mark, swap_turn, update_turn_indicator } from "../JS/turns.js
 import { is_draw, is_winner } from "../JS/rules.js";
 import { end_the_game, handle_clicks } from "../index.js";
 
+
+
 export function get_medium_ai_move(cells) {
     // Get all available (empty) cells
     const available_cells = [...cells].filter(cell => 
