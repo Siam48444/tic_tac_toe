@@ -205,8 +205,18 @@ main {
     color: var(--color_main);
     cursor: pointer;
     width: calc(var(--cell_width) * 3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
 
     transition: box-shadow var(--transition_duration_fast);
+}
+
+.restart_button > svg {
+    fill: var(--color_main);
+    width: calc(var(--button_font_size) * 1.4);
+    /* background-color: red; */
 }
 
 
