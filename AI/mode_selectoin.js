@@ -4,30 +4,18 @@ import { start_the_game } from "../index.js";
 
 
 
-let mode = "easy"; // Default mode
 let ai_enabled = false; // Tracks if AI is enabled
 
 
 export function initialize_mode_selection() {
     document.getElementById("mode_selection").addEventListener("change", e => {
         let mode = e.target.value;
-        ai_enabled = mode !== "two players";
+        ai_enabled = (mode !== "two players");
     
-        if (mode === "easy") {
-            ai_enabled = true;
-            
-            start_the_game();
-            reset_scores();
-            reset_turn();
-        }
-        else if (mode === "two players") {
-            ai_enabled = false;
+        start_the_game();
+        reset_scores();
+        reset_turn();
 
-            reset_scores();
-            reset_turn();
-            start_the_game();
-        }
-        
         
         // Usual settings for ai mode
         if (ai_enabled) {
