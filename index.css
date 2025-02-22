@@ -490,7 +490,7 @@ main {
 
 
 @media (width >=1000px) {
-    :is(.restart_button, .score_button, .theme_button, .sound_button, .mode_selection):hover {
+    :is(.restart_button, .theme_button, .sound_button, .mode_selection):hover {
         box-shadow: var(--button_box_shadow_offset) var(--color_main);
     }
 

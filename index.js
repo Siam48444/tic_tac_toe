@@ -1,7 +1,7 @@
 import { winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_button } from "./Assets/Sounds/sounds.js";
 import { reset_scores, update_scores } from "./JS/scores.js";
 import { CROSS_CLASS, CIRCLE_CLASS, is_winner, is_draw, highlight_winning_cells } from "./JS/rules.js";
-import { disable_turn_selection, get_user_turn, circle_turn, swap_turn, update_turn_indicator, place_the_mark } from "./JS/turns.js";
+import { disable_turn_selection, get_user_turn, circle_turn, swap_turn, update_turn_indicator, place_the_mark, reset_turn } from "./JS/turns.js";
 // import { place_easy_ai_move } from "./AI/ai_easy.js";
 // import { initialize_mode_selection } from "./AI/mode_selectoin.js";
 
@@ -22,8 +22,30 @@ let mode = "two players"; // Keeps track of the game mode
 let ai_enabled = false; // Tracks if AI is enabled
 
 mode_selection.addEventListener("change", e => {
-    mode = e.target.value; 
+    mode = e.target.value; // Set the game mode 
     ai_enabled = (mode !== "two players"); // Check if ai mode is enabled
+
+    if (ai_enabled) {
+        start_the_game();
+        reset_scores();
+        reset_turn();
+        disable_turn_selection();
+
+        // Start the next round
+        winning_message.addEventListener("click", () => { 
+            reset_turn();
+            start_the_game();
+            disable_turn_selection();
+        }); 
+
+        // Reset the scores and restart the game
+        restart_button.addEventListener("click", () => { 
+            reset_scores();
+            reset_turn();
+            start_the_game();
+            disable_turn_selection();
+        }); 
+    }
 });
 
 
