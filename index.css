@@ -411,7 +411,6 @@ main {
     align-items: center;
     justify-content: start;
     position: relative;
-    padding-bottom: 0.3em;
 }
 
 .theme_top_head {
@@ -473,7 +472,7 @@ main {
     align-items: center;
     justify-content: center;
     gap: calc(var(--button_font_size) * 0.4); 
-    padding: var(--theme_option_padding);
+    padding: var(--theme_indicator_padding);
     border-radius: var(--button_border_radius);
 }
 
