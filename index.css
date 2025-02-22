@@ -216,7 +216,6 @@ main {
 .restart_button > svg {
     fill: var(--color_main);
     width: calc(var(--button_font_size) * 1.4);
-    /* background-color: red; */
 }
 
 
