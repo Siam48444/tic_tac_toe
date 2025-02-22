@@ -2,7 +2,7 @@ import { winning_sound, draw_sound, play_sound, is_muted, toggle_sound, sound_bu
 import { reset_scores, update_scores } from "./JS/scores.js";
 import { CROSS_CLASS, CIRCLE_CLASS, is_winner, is_draw, highlight_winning_cells } from "./JS/rules.js";
 import { disable_turn_selection, get_user_turn, circle_turn, swap_turn, update_turn_indicator, place_the_mark, reset_turn } from "./JS/turns.js";
-// import { place_easy_ai_move } from "./AI/ai_easy.js";
+import { place_easy_ai_move } from "./AI/ai_easy.js";
 // import { initialize_mode_selection } from "./AI/mode_selectoin.js";
 
 
@@ -27,18 +27,25 @@ mode_selection.addEventListener("change", e => {
 
     // Usual settings for ai mode
     if (ai_enabled) {
-        start_the_game();
         reset_scores();
         reset_turn();
         disable_turn_selection();
-
+        start_the_game();
+        
         // Start the next round
         winning_message.addEventListener("click", () => { 
+            disable_turn_selection();
             start_the_game();
         });
-    }
-    else {
-        start_the_game();
+        
+        // Reset the scores and restart the game
+        restart_button.addEventListener("click", () => {
+            disable_turn_selection();
+            reset_scores(); 
+            reset_turn();
+            start_the_game(); 
+        }); 
+
     }
 });
 
@@ -105,6 +112,9 @@ export function handle_clicks(e) {
     }
 
 
+
+    // Place ai moves 
+    if (mode === "easy") place_easy_ai_move(cells);
 }
 
 
