@@ -42,8 +42,8 @@ html {
 }
 
 ::-webkit-scrollbar {
-    width: 1vmin;
-    height: 1vmin;
+    width: 0.8vmin;
+    height: 0.8vmin;
 }
 ::-webkit-scrollbar-track {
     background-color: #ffffff;
@@ -184,6 +184,16 @@ body.menthol {
     --color_bg: #00c18c;
     --color_main: #ffffff;
     --color_sub: #17ae7d;
+}
+body.metaverse {
+    --color_bg: #232323;
+    --color_main: #d82934;
+    --color_sub: #1d1d1d;
+}
+body.olive {
+    --color_bg: #e9e5cc;
+    --color_main: #53533e;
+    --color_sub: #d4cfbc;
 }
 
 
