@@ -53,6 +53,10 @@ html {
 
 
 :root {
+    --color_bg: #eeeeee;
+    --color_main: #444444;
+    --color_sub: #d0d4d9;
+    
     --cell_width: clamp(4em, 16vmin, 15em);
 
     --mark_size: calc(var(--cell_width) * 0.9);
