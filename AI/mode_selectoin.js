@@ -32,14 +32,14 @@ export function initialize_mode_selection() {
             disable_turn_selection();
             
             // Start the next round
-            winning_message.addEventListener("click", () => { 
+            document.querySelector(".winning_message").addEventListener("click", () => { 
                 reset_turn();
                 start_the_game();
                 disable_turn_selection();
             }); 
     
             // Reset the scores and restart the game
-            restart_button.addEventListener("click", () => { 
+            document.querySelector(".restart_button").addEventListener("click", () => { 
                 reset_scores();
                 reset_turn();
                 start_the_game();
