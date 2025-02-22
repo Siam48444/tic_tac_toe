@@ -300,7 +300,7 @@ main {
 }
 
 .score_button > p {
-    font-family: "Bold";
+    font-family: "Extrabold";
     font-size: var(--button_font_size);
     color: var(--color_main);
 }
@@ -421,7 +421,7 @@ main {
 }
 
 .theme_top_head > p {
-    font-family: "Bold";
+    font-family: "Extrabold";
     font-size: var(--theme_head_font_size);
     color: var(--color_main);
 }
