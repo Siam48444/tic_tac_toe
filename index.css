@@ -456,6 +456,7 @@ main {
     font-family: "Inter_Regular";
     font-size: var(--button_font_size);
     color: var(--color_main);
+    text-align: left;
 
     transition: 
         color var(--transition_duration_fast),
