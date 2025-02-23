@@ -67,6 +67,9 @@ restart_button.addEventListener("click", () => { // Reset the scores and restart
     reset_turn();
     reset_scores(); 
     start_the_game(); 
+
+    // Restart button arrow animation
+    restart_button.classList.add("restart_clicked");
 }); 
 
 

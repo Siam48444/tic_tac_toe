@@ -219,6 +219,14 @@ main {
     aspect-ratio: 1;
 }
 
+.restart_button.restart_clicked > svg {
+    animation: restart_clicked var(--transition_duration_medium) forwards;
+}
+
+@keyframes restart_clicked {
+    to { rotate: 360deg; }
+}
+
 
 /* Player details on the top of the board */
 .top_details {
