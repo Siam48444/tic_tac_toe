@@ -208,14 +208,15 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.3em;
+    gap: 0.5em;
 
     transition: box-shadow var(--transition_duration_fast);
 }
 
 .restart_button > svg {
     fill: var(--color_main);
-    width: calc(var(--button_font_size) * 1.4);
+    width: var(--button_font_size);
+    aspect-ratio: 1;
 }
 
 

@@ -38,7 +38,7 @@ mode_selection.addEventListener("change", e => {
             start_the_game();
             
             // AI plays first if it won the last round
-            if (circle_turn) place_easy_ai_move(cells); 
+            if (circle_turn && mode === "easy") place_easy_ai_move(cells); 
         });
         
         // Reset the scores and restart the game
@@ -123,7 +123,7 @@ export function handle_clicks(e) {
 
 
     // Place ai moves 
-    if (mode === "easy" && circle_turn) place_easy_ai_move(cells);
+    if (ai_enabled && circle_turn && mode === "easy") place_easy_ai_move(cells);
 }
 
 
