@@ -15,21 +15,26 @@ function minimax(cells, depth, isMaximizing) {
 
     if (isMaximizing) {
         let bestScore = -Infinity;
+
         for (let cell of available_cells) {
             cell.classList.add(CIRCLE_CLASS);
             let score = minimax(cells, depth + 1, false);
             cell.classList.remove(CIRCLE_CLASS);
             bestScore = Math.max(score, bestScore);
         }
+
         return bestScore;
-    } else {
+    } 
+    else {
         let bestScore = Infinity;
+
         for (let cell of available_cells) {
             cell.classList.add(CROSS_CLASS);
             let score = minimax(cells, depth + 1, true);
             cell.classList.remove(CROSS_CLASS);
             bestScore = Math.min(score, bestScore);
         }
+        
         return bestScore;
     }
 }
