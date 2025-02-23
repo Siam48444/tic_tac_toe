@@ -300,6 +300,8 @@ main {
     box-shadow: var(--button_box_shadow_offset) var(--color_main);
 }
 
+.score_button.score_button_disabled { cursor: not-allowed; }
+
 .score_button > svg {
     fill: none;
     stroke: var(--color_main);
