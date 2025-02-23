@@ -125,7 +125,7 @@ export function handle_clicks(e) {
         update_turn_indicator();      
 
 
-        // Place ai moves 
+        // Place ai moves (if enabled)
         if (circle_turn && mode === "easy") place_easy_ai_move(cells);
         else if (circle_turn && mode === "medium") place_medium_ai_move(cells);
         else if (circle_turn && mode === "hard") place_hard_ai_move(cells);

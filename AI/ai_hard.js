@@ -63,9 +63,14 @@ export function get_hard_ai_move(cells) {
 
 // Place AI Move (hard Mode)
 export function place_hard_ai_move(cells) {
-    setTimeout(() => {
-        const ai_cell = get_hard_ai_move(cells);
+    // Disable cell clicks until the ai puts its mark
+    for (let cell of cells) {
+        cell.removeEventListener("click", handle_clicks);
+    }
 
+    const ai_cell = get_hard_ai_move(cells);
+
+    setTimeout(() => {
         if (ai_cell) {
             place_the_mark(ai_cell, CIRCLE_CLASS);
             ai_cell.removeEventListener("click", handle_clicks); // Prevent user clicks
@@ -83,5 +88,14 @@ export function place_hard_ai_move(cells) {
                 update_turn_indicator();
             }
         }
-    }, 100);
+        else {
+            return;
+        }
+        
+        // Enable cell clicks after the ai puts the mark
+        for (let cell of cells) {
+            cell.addEventListener("click", handle_clicks);
+        }
+
+    }, 300);
 }
