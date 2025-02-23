@@ -3,6 +3,7 @@ import { reset_scores, update_scores } from "./JS/scores.js";
 import { CROSS_CLASS, CIRCLE_CLASS, is_winner, is_draw, highlight_winning_cells } from "./JS/rules.js";
 import { disable_turn_selection, get_user_turn, circle_turn, swap_turn, update_turn_indicator, place_the_mark, reset_turn } from "./JS/turns.js";
 import { place_easy_ai_move } from "./AI/ai_easy.js";
+import { place_medium_ai_move } from "./AI/ai_medium.js";
 
 
 
@@ -39,6 +40,7 @@ mode_selection.addEventListener("change", e => {
             
             // AI plays first if it won the last round
             if (circle_turn && mode === "easy") place_easy_ai_move(cells); 
+            else if (circle_turn && mode === "medium") place_medium_ai_move(cells); 
         });
         
         // Reset the scores and restart the game
@@ -130,6 +132,7 @@ export function handle_clicks(e) {
 
     // Place ai moves 
     if (ai_enabled && circle_turn && mode === "easy") place_easy_ai_move(cells);
+    else if (ai_enabled && circle_turn && mode === "medium") place_medium_ai_move(cells);
 }
 
 
