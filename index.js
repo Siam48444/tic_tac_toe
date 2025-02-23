@@ -123,13 +123,13 @@ export function handle_clicks(e) {
     else {
         swap_turn(); 
         update_turn_indicator();      
+
+
+        // Place ai moves 
+        if (circle_turn && mode === "easy") place_easy_ai_move(cells);
+        else if (circle_turn && mode === "medium") place_medium_ai_move(cells);
+        else if (circle_turn && mode === "hard") place_hard_ai_move(cells);
     }
-
-
-    // Place ai moves 
-    if (circle_turn && mode === "easy") place_easy_ai_move(cells);
-    else if (circle_turn && mode === "medium") place_medium_ai_move(cells);
-    else if (circle_turn && mode === "hard") place_hard_ai_move(cells);
 }
 
 
