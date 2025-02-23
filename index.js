@@ -131,8 +131,12 @@ export function handle_clicks(e) {
 
 
     // Place ai moves 
-    if (ai_enabled && circle_turn && mode === "easy") place_easy_ai_move(cells);
-    else if (ai_enabled && circle_turn && (mode === "medium" || mode === "hard")) place_medium_ai_move(cells);
+    if (ai_enabled && circle_turn && mode === "easy") {
+        place_easy_ai_move(cells);
+    }
+    else if (ai_enabled && circle_turn && (mode === "medium" || mode === "hard")) {
+        place_medium_ai_move(cells);
+    }
 }
 
 
