@@ -139,7 +139,12 @@ export function end_the_game(win, winning_cells = []) {
         highlight_winning_cells(cells, winning_cells); 
         update_scores(circle_turn);
 
-        play_sound(winning_sound, is_muted); // Play the winning sound
+        if (ai_enabled && circle_turn) {
+            play_sound(draw_sound, is_muted); // Play the winning sound
+        }
+        else {
+            play_sound(winning_sound, is_muted);
+        }
     }
     else {
         winning_message.classList.add("show_draw"); // Show the draw class if there is no winner

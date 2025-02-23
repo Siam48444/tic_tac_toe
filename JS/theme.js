@@ -6,7 +6,7 @@ const THEMES = [
 ]
 
 const theme_button = document.querySelector(".theme_button");
-const appearance_text = theme_button.querySelector("p");
+const theme_text = theme_button.querySelector("p");
 
 const theme_container = document.querySelector(".theme_container");
 const theme_cancel_svg = document.querySelector(".theme_top_head > svg");
@@ -35,10 +35,10 @@ else { document.body.classList.add("default_light"); }
 
 // Update the theme name 
 if (stored_theme_name) { 
-    appearance_text.innerText = stored_theme_name; 
+    theme_text.innerText = stored_theme_name; 
 }
 else {
-    appearance_text.innerText = "Default Ligth";
+    theme_text.innerText = "Default Ligth";
 }
 
 
@@ -91,7 +91,7 @@ function update_theme(theme_option) { // Add the theme class to the body
 
 function update_theme_name(theme_option) { // Update appearance button text
     var theme_name = theme_option.getAttribute("data-theme-name");
-    appearance_text.innerText = theme_name;
+    theme_text.innerText = theme_name;
 }
 
 
