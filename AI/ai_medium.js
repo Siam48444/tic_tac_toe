@@ -14,47 +14,5 @@ export function get_medium_ai_move(cells) {
     if (available_cells.length === 0) return;
 
     // Try to win
-    for (const cell of available_cells) {
-        cell.classList.add(CIRCLE_CLASS);
-        if (is_winner(cells, CIRCLE_CLASS)) {
-            cell.classList.remove(CIRCLE_CLASS);
-            return cell;
-        }
-        cell.classList.remove(CIRCLE_CLASS);
-    }
-
-    // Try to block the opponent
-    for (const cell of available_cells) {
-        cell.classList.add(CROSS_CLASS);
-        if (is_winner(cells, CROSS_CLASS)) {
-            cell.classList.remove(CROSS_CLASS);
-            return cell;
-        }
-        cell.classList.remove(CROSS_CLASS);
-    }
-
-    // Choose a random move
-    return available_cells[Math.floor(Math.random() * available_cells.length)];
-}
-
-export function place_medium_ai_move(cells) {
-    setTimeout(() => {
-        const ai_cell = get_medium_ai_move(cells);
-        if (!ai_cell) return;
-        
-        ai_cell.removeEventListener("click", handle_clicks); // Prevent user clicks
-        place_the_mark(ai_cell, CIRCLE_CLASS);
-        
-        const ai_winning_cells = is_winner(cells, CIRCLE_CLASS);
-        if (ai_winning_cells) {
-            end_the_game(true, ai_winning_cells);
-            return;
-        }
-        if (is_draw(cells)) {
-            end_the_game(false);
-            return;
-        }
-        swap_turn();
-        update_turn_indicator();
-    }, 100);
+    
 }
