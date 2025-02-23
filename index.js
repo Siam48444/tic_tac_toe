@@ -4,6 +4,7 @@ import { CROSS_CLASS, CIRCLE_CLASS, is_winner, is_draw, highlight_winning_cells 
 import { disable_turn_selection, get_user_turn, circle_turn, swap_turn, update_turn_indicator, place_the_mark, reset_turn } from "./JS/turns.js";
 import { place_easy_ai_move } from "./AI/ai_easy.js";
 import { place_medium_ai_move } from "./AI/ai_medium.js";
+import { place_asian_ai_move } from "./AI/ai_asian.js";
 
 
 
@@ -136,6 +137,9 @@ export function handle_clicks(e) {
     }
     else if (ai_enabled && circle_turn && (mode === "medium" || mode === "hard")) {
         place_medium_ai_move(cells);
+    }
+    else if (ai_enabled && circle_turn && mode === "asian") {
+        place_asian_ai_move(cells);
     }
 }
 
