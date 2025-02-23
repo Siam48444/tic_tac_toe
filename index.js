@@ -36,11 +36,8 @@ mode_selection.addEventListener("change", e => {
         
         // Start the next round
         winning_message.addEventListener("click", () => { 
+            reset_turn();
             start_the_game();
-            
-            // AI plays first if it won the last round
-            if (circle_turn && mode === "easy") place_easy_ai_move(cells); 
-            else if (circle_turn && (mode === "medium" || mode === "hard")) place_medium_ai_move(cells); 
         });
         
         // Reset the scores and restart the game
@@ -51,6 +48,9 @@ mode_selection.addEventListener("change", e => {
         }); 
     }
     else {
+        start_the_game()
+        reset_turn();
+        reset_scores();
         get_user_turn(); // Re-enable turn selection in Two-Player mode
     }
 });
