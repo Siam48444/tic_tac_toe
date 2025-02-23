@@ -37,7 +37,7 @@ function minimax(cells, depth, isMaximizing) {
 
 
 // Get the best AI move using Minimax
-export function get_asian_ai_move(cells) {
+export function get_hard_ai_move(cells) {
     let bestMove = null;
     let bestScore = -Infinity;
 
@@ -61,10 +61,10 @@ export function get_asian_ai_move(cells) {
 
 
 
-// Place AI Move (asian Mode)
-export function place_asian_ai_move(cells) {
+// Place AI Move (hard Mode)
+export function place_hard_ai_move(cells) {
     setTimeout(() => {
-        const ai_cell = get_asian_ai_move(cells);
+        const ai_cell = get_hard_ai_move(cells);
 
         if (ai_cell) {
             place_the_mark(ai_cell, CIRCLE_CLASS);
