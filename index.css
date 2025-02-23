@@ -414,7 +414,7 @@ main {
     height: 80%;
     width: calc(var(--cell_width) * 3.5);
     border: solid 0.1em var(--color_main);
-    border-radius: var(--button_font_size);
+    /* border-radius: var(--button_font_size); */
     overflow-x: hidden;
     display: flex;
     flex-direction: column;

@@ -44,11 +44,10 @@ html {
 }
 ::-webkit-scrollbar-track {
     background-color: #ffffff;
-    border-radius: 5em;
 }
 ::-webkit-scrollbar-thumb {
     background-color: var(--color_main);
-    border-radius: 5em;
+    cursor: grab;
 }
 
 
