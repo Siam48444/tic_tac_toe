@@ -85,11 +85,8 @@ export function start_the_game() {
 
     game_over = false; // Reset the game over state
 
-    if (mode !== "two players") {
-        disable_turn_selection(); // Ensure turn selection is disabled in AI mode
-    } else {
-        get_user_turn(); // Only allow user to select turn in two-player mode
-    }
+    if (mode !== "two players") disable_turn_selection(); // Ensure turn selection is disabled in AI mode
+    else get_user_turn(); // Only allow user to select turn in two-player mode
 
     update_turn_indicator(); // Indicate the user turn graphically 
 
