@@ -21,7 +21,8 @@ const saved_theme_class = localStorage.getItem("theme_class");
 if (saved_theme_class) { 
     document.body.classList.add(saved_theme_class); // Update the theme class 
     
-    theme_option.forEach(option => { // Update the theme active style based on the last theme
+    // Update the theme active style based on the last theme
+    theme_option.forEach(option => { 
         if (option.getAttribute("data-theme") === saved_theme_class) {
             option.classList.add("active_theme_option");
         } 
@@ -32,7 +33,13 @@ if (saved_theme_class) {
 } 
 else { document.body.classList.add("default_light"); }
 
-if (stored_theme_name) { appearance_text.innerText = stored_theme_name; } // Update the theme name 
+// Update the theme name 
+if (stored_theme_name) { 
+    appearance_text.innerText = stored_theme_name; 
+}
+else {
+    appearance_text.innerText = "Default Ligth";
+}
 
 
 
