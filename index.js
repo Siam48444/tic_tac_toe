@@ -70,6 +70,9 @@ restart_button.addEventListener("click", () => { // Reset the scores and restart
 
     // Restart button arrow animation
     restart_button.classList.add("restart_clicked");
+    setTimeout(() => {
+        restart_button.classList.remove("restart_clicked");
+    }, 600);
 }); 
 
 
