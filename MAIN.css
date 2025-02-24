@@ -57,6 +57,7 @@ html {
     --color_sub: #d0d4d9;
     
     --cell_width: clamp(4em, 16vmin, 15em);
+    --cell_border_width: 0.1em;
 
     --main_width: min(100%, 2000px);
 

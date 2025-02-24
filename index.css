@@ -57,8 +57,9 @@ main {
     pointer-events: none;
     
     & > line {
-        width: 1em;
-        fill: var(--color_main);
+        fill: none;
+        stroke: var(--color_main);
+        stroke-width: var(--cell_border_width);
     }
 }
 
@@ -69,7 +70,7 @@ main {
     width: var(--cell_width);
     aspect-ratio: 1;
     background-color: var(--color_bg);
-    border: solid 0.1em green;
+    border: none;
     position: relative;
     cursor: pointer;
 }
