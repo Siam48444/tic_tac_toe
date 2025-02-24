@@ -60,6 +60,7 @@ main {
     fill: none;
     stroke: var(--color_main);
     stroke-width: var(--cell_border_width);
+    stroke-linecap: round;
     
     --dash: 111;
     stroke-dasharray: var(--dash); 
@@ -69,9 +70,7 @@ main {
 }
 
 @keyframes cell_border_animation {
-    to { 
-        stroke-dashoffset: 0; 
-    }
+    to { stroke-dashoffset: 0; }
 }
 
 
