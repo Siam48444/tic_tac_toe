@@ -213,6 +213,11 @@ body.strawberry {
     --color_main: #fcfcf8;
     --color_sub: #e06870;
 }
+body.tangerine {
+    --color_bg: #ffede0;
+    --color_main: #fe5503;
+    --color_sub: #fdd3bf;
+}
 
 
 
