@@ -6,13 +6,21 @@ import { end_the_game, handle_clicks } from "../index.js";
 
 // Minimax Algorithm
 export function minimax(cells, is_maximizing) {
-    // Get all the available (empty) cells
-    const available_cells = [...cells].filter(cell => {
-        return !cell.classList.contains(CROSS_CLASS) && !cell.classList.contains(CIRCLE_CLASS);
-    });
-    
     if (is_winner(cells, CROSS_CLASS)) return 1; //AI wins
     else if (is_winner(cells, CIRCLE_CLASS)) return -1; // Opponent wins
     else if (is_draw(cells)) return 0; // Draw
 
+    // Get all the available (empty) cells
+    const available_cells = [...cells].filter(cell => {
+        return !cell.classList.contains(CROSS_CLASS) && !cell.classList.contains(CIRCLE_CLASS);
+    });
+
+
+    if (is_maximizing) { // AI's turn (maximize score)
+        let best_score = -Infinity;
+        for (let cell of available_cells) {
+            cell.classList.add(CIRCLE_CLASS); // Simulate ai move
+            let score = minimax(cells, false);
+        }
+    }
 }
