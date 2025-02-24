@@ -6,8 +6,8 @@ import { end_the_game, handle_clicks } from "../index.js";
 
 // Minimax Algorithm
 function minimax(cells, is_maximizing) {
-    if (is_winner(cells, CROSS_CLASS)) return 1; //AI wins
-    else if (is_winner(cells, CIRCLE_CLASS)) return -1; // Opponent wins
+    if (is_winner(cells, CIRCLE_CLASS)) return 1; //AI wins
+    else if (is_winner(cells, CROSS_CLASS)) return -1; // Opponent wins
     else if (is_draw(cells)) return 0; // Draw
 
 
