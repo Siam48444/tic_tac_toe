@@ -9,4 +9,9 @@ export function minimax(cells, is_maximizing) {
     if (is_winner(cells, CROSS_CLASS)) return 1; //AI wins
     else if (is_winner(cells, CIRCLE_CLASS)) return -1; // Opponent wins
     else if (is_draw(cells)) return 0; // Draw
+
+    // Get all the available (empty) cells
+    const available_cells = [...cells].filter(cell => {
+        return !cell.classList.contains(CROSS_CLASS) && !cell.classList.contains(CIRCLE_CLASS);
+    });
 }

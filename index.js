@@ -75,7 +75,7 @@ export function handle_clicks(e) {
     const current_turn = circle_turn ? CIRCLE_CLASS : CROSS_CLASS; // Determine current player's turn
     
     place_the_mark(cell, current_turn);
-
+    
     const winning_cells = is_winner(cells, current_turn); // Check if current move is a winning move
 
     if (winning_cells) {
@@ -91,7 +91,7 @@ export function handle_clicks(e) {
         update_turn_indicator();      
     }
 
-    
+
 
     // Place ai moves (if enabled)
     if (mode !== "two players") {
