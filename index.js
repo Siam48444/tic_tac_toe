@@ -91,6 +91,7 @@ export function handle_clicks(e) {
         update_turn_indicator();      
     }
 
+    
 
     // Place ai moves (if enabled)
     if (mode !== "two players") {
