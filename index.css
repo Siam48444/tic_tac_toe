@@ -51,6 +51,17 @@ main {
     grid-template-columns: repeat(3, auto);
 }
 
+.board > .board_borders_svg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    
+    & > line {
+        width: 1em;
+        fill: var(--color_main);
+    }
+}
+
 .cell {
     display: flex;
     align-items: center;
@@ -58,17 +69,17 @@ main {
     width: var(--cell_width);
     aspect-ratio: 1;
     background-color: var(--color_bg);
-    border: solid 0.05em var(--color_main);
+    border: solid 0.1em green;
     position: relative;
     cursor: pointer;
 }
 
 
 /* Remove unnecessary borders */
-.cell:is(:nth-child(1), :nth-child(2), :nth-child(3)) { border-top: none; }
+/* .cell:is(:nth-child(1), :nth-child(2), :nth-child(3)) { border-top: none; }
 .cell:is(:nth-child(1), :nth-child(4), :nth-child(7)) { border-left: none; }
 .cell:is(:nth-child(7), :nth-child(8), :nth-child(9)) { border-bottom: none; }
-.cell:is(:nth-child(3), :nth-child(6), :nth-child(9)) { border-right: none; }
+.cell:is(:nth-child(3), :nth-child(6), :nth-child(9)) { border-right: none; } */
 
 
 /* X and O marks */
