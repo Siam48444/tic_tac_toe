@@ -20,7 +20,8 @@ export function minimax(cells, is_maximizing) {
         let best_score = -Infinity;
         for (let cell of available_cells) {
             cell.classList.add(CIRCLE_CLASS); // Simulate ai move
-            let score = minimax(cells, false);
+            let score = minimax(cells, false); // Get score
+            cell.classList.remove(CROSS_CLASS); // Undo move
         }
     }
 }
