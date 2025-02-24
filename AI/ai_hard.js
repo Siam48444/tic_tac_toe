@@ -31,4 +31,19 @@ export function minimax(cells, is_maximizing) {
 
         return best_score;
     }
+
+    // Opponent's turn (minimize score)
+    else {
+        let best_score = Infinity;
+
+        for (let cell of available_cells) {
+            cell.classList.add(CROSS_CLASS); // Simulate ai move
+            let score = minimax(cells, true); // Get score
+            cell.classList.remove(CROSS_CLASS); // Undo move
+
+            best_score = Math.min(score, best_score);
+        }
+
+        return best_score;
+    }
 }
