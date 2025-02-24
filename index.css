@@ -66,7 +66,6 @@ main {
     stroke-dashoffset: var(--dash); 
     
     animation: cell_border_animation var(--transition_duration_medium) forwards ease-in-out;
-    animation-delay: var(--transition_duration_fast);
 }
 
 @keyframes cell_border_animation {
@@ -176,6 +175,9 @@ main {
     position: absolute;
     inset: 0;
     background-color: var(--color_bg);
+    border: var(--button_border);
+    border-color: var(--color_main);
+    border-radius: var(--cell_border_radius);
 
     opacity: 0;
     transform: translateX(-3%);
