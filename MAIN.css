@@ -208,6 +208,11 @@ body.shadow {
     --color_main: #eeeeee;
     --color_sub: #222222;
 }
+body.strawberry {
+    --color_bg: #f37f83;
+    --color_main: #fcfcf8;
+    --color_sub: #e06870;
+}
 
 
 
