@@ -25,5 +25,6 @@ export function minimax(cells, is_maximizing) {
 
             best_score = Math.max(score, best_score);
         }
+        return best_score;
     }
 }
