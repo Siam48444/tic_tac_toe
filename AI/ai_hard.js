@@ -10,14 +10,17 @@ export function minimax(cells, is_maximizing) {
     else if (is_winner(cells, CIRCLE_CLASS)) return -1; // Opponent wins
     else if (is_draw(cells)) return 0; // Draw
 
+
     // Get all the available (empty) cells
     const available_cells = [...cells].filter(cell => {
         return !cell.classList.contains(CROSS_CLASS) && !cell.classList.contains(CIRCLE_CLASS);
     });
 
 
-    if (is_maximizing) { // AI's turn (maximize score)
+    // AI's turn (maximize score)
+    if (is_maximizing) { 
         let best_score = -Infinity;
+
         for (let cell of available_cells) {
             cell.classList.add(CIRCLE_CLASS); // Simulate ai move
             let score = minimax(cells, false); // Get score
@@ -25,6 +28,7 @@ export function minimax(cells, is_maximizing) {
 
             best_score = Math.max(score, best_score);
         }
+        
         return best_score;
     }
 }
