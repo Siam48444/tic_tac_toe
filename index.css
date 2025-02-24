@@ -22,7 +22,7 @@ footer {
 
 footer > a {
     font-family: "Regular";
-    font-size: calc(var(--button_font_size) * 0.88);
+    font-size: calc(var(--button_font_size) * 0.85);
     color: var(--color_main);
     text-decoration: none;
     
@@ -217,7 +217,7 @@ main {
     padding: var(--button_padding);
     background-color: var(--color_sub);
     outline: none;
-    border: none;
+    border: var(--button_border);
     border-radius: var(--button_border_radius);
     font-family: "Medium";
     font-size: var(--button_font_size);
@@ -280,7 +280,7 @@ main {
     padding: var(--button_padding);
     background-color: var(--color_sub);
     outline: none;
-    border: none;
+    border: var(--button_border);
     border-radius: var(--button_border_radius);
     cursor: pointer;
     font-family: "Medium";
@@ -317,7 +317,7 @@ main {
     padding: var(--button_padding);
     background-color: var(--color_sub);
     outline: none;
-    border: none;
+    border: var(--button_border);
     border-radius: var(--button_border_radius);
     cursor: pointer;
 
@@ -350,7 +350,7 @@ main {
     padding: var(--button_padding);
     background-color: var(--color_sub);
     outline: none;
-    border: none;
+    border: var(--button_border);
     border-radius: var(--button_border_radius);
     font-family: "Medium";
     font-size: var(--button_font_size);
@@ -375,7 +375,7 @@ main {
 .sound_button {
     background-color: var(--color_sub);
     outline: none;
-    border: none;
+    border: var(--button_border);
     border-radius: 50%;
     aspect-ratio: 1;
     padding: clamp(0.5em, 0.8vmin, 1.5em);
@@ -520,6 +520,10 @@ main {
     border-radius: 50%;
 }
 
+
+:is(.restart_button, .theme_button, .sound_button, .mode_selection, .score_button):active {
+    border-color: var(--color_main);
+}
 
 
 
