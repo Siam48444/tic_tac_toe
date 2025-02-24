@@ -82,18 +82,17 @@ main {
     justify-content: center;
     width: var(--cell_width);
     aspect-ratio: 1;
-    background-color: var(--color_bg);
+    background-color: transparent;
     border: none;
     position: relative;
     cursor: pointer;
 }
 
-
-/* Remove unnecessary borders */
-.cell:is(:nth-child(1), :nth-child(2), :nth-child(3)) { border-top: none; }
-.cell:is(:nth-child(1), :nth-child(4), :nth-child(7)) { border-left: none; }
-.cell:is(:nth-child(7), :nth-child(8), :nth-child(9)) { border-bottom: none; }
-.cell:is(:nth-child(3), :nth-child(6), :nth-child(9)) { border-right: none; }
+/* Add fancy border radiuses */
+.cell:nth-child(1) { border-top-left-radius: var(--cell_border_radius); }
+.cell:nth-child(3) { border-top-right-radius: var(--cell_border_radius); }
+.cell:nth-child(7) { border-bottom-left-radius: var(--cell_border_radius); }
+.cell:nth-child(9) { border-bottom-right-radius: var(--cell_border_radius); }
 
 
 /* X and O marks */
