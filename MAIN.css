@@ -218,6 +218,11 @@ body.tangerine {
     --color_main: #fe5503;
     --color_sub: #fdd3bf;
 }
+body.watermelon {
+    --color_bg: #1f4437;
+    --color_main: #d6686f;
+    --color_sub: #244d3f;
+}
 
 
 
