@@ -203,6 +203,11 @@ body.peach {
     --color_main: #cc7158;
     --color_sub: #e2caaf;
 }
+body.shadow {
+    --color_bg: #000000;
+    --color_main: #eeeeee;
+    --color_sub: #222222;
+}
 
 
 
