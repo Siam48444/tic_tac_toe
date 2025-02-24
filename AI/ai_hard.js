@@ -22,6 +22,8 @@ export function minimax(cells, is_maximizing) {
             cell.classList.add(CIRCLE_CLASS); // Simulate ai move
             let score = minimax(cells, false); // Get score
             cell.classList.remove(CROSS_CLASS); // Undo move
+
+            best_score = Math.max(score, best_score);
         }
     }
 }
