@@ -60,7 +60,6 @@ main {
     fill: none;
     stroke: var(--color_main);
     stroke-width: var(--cell_border_width);
-    stroke-linecap: round;
     
     --dash: 111;
     stroke-dasharray: var(--dash); 
