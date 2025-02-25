@@ -59,7 +59,7 @@ main {
     
     fill: none;
     stroke: var(--color_main);
-    stroke-width: var(--cell_border_width);
+    stroke-width: var(--cell_border_thickness);
     
     --dash: 111;
     stroke-dasharray: var(--dash); 
@@ -545,6 +545,7 @@ main {
 }
 
 
+/* Buttons clicking effects */
 :is(.restart_button, .theme_button, .sound_button, .mode_selection, .score_button):active {
     border-color: var(--color_main);
 }
