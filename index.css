@@ -65,7 +65,7 @@ main {
     stroke-dasharray: var(--dash); 
     stroke-dashoffset: var(--dash); 
     
-    animation: cell_border_animation var(--transition_duration_medium) forwards ease-in-out;
+    animation: cell_border_animation calc(var(--transition_duration_medium) * 2) forwards;
 }
 
 @keyframes cell_border_animation {
