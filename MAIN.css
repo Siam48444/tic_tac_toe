@@ -62,7 +62,7 @@ html {
 
     --main_width: min(100%, 2000px);
 
-    --mark_size: calc(var(--cell_width) * 0.9);
+    --mark_size: calc(var(--cell_width) * 0.85);
     --mark_thickness: 1em;
 
     --stroke_dash_X: 111;
