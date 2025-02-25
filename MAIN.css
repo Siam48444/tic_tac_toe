@@ -58,7 +58,7 @@ html {
     
     --cell_width: clamp(4em, 16vmin, 15em);
     --cell_border_thickness: 0.03em;
-    --cell_border_radius: var(--button_font_size);
+    --cell_border_radius: calc(var(--button_font_size) * 1.5);
 
     --main_width: min(100%, 2000px);
 
