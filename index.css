@@ -552,7 +552,7 @@ main {
 
 
 /* Page loading buttons animation */
-:is(footer, nav, .top_details, .restart_button) {
+body {
     animation: load_animation var(--transition_duration_slow) forwards;
 }
 
