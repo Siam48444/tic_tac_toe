@@ -263,7 +263,7 @@ main {
 }
 
 .restart_button.restart_clicked > svg {
-    animation: restart_clicked var(--transition_duration_medium) forwards;
+    animation: restart_clicked var(--transition_duration_medium) forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 @keyframes restart_clicked {
