@@ -10,21 +10,25 @@ export let is_muted = false; // Keeps track if the sound is muted or not
 
 
 
-// Check for the sound mode when the page loads
-const sound_muted = localStorage.getItem("sound_muted");
-window.addEventListener("load", () => {
-    if (sound_muted) {
-        is_muted = true;
-        document.getElementById("sound_button").classList.add("muted");
-    }
-});
-
-
-
 // Let the user choose to mute or unmute
 export function set_sound_mode() {
     const sound_button = document.getElementById("sound_button");
 
+    if (!sound_button) return; // Prevent errors if the button is missing
+
+
+    // Check for the sound mode when the page loads
+    window.addEventListener("load", () => {
+        const sound_muted = localStorage.getItem("sound_muted");
+
+        if (sound_muted === "true") {
+            is_muted = true;
+            sound_button.classList.add("muted");
+        }
+    });
+
+
+    // Toggle sound mode
     sound_button.addEventListener("click", () => {
         is_muted = !is_muted; // Mute or unmute the sound
         sound_button.classList.toggle("muted"); // Show the sound state graphically
@@ -45,5 +49,5 @@ export function play_sound(sound, is_muted = false) {
 
 // Save the sound mode in the local storage
 function save_sound_mode() {
-    localStorage.setItem("sound_muted", is_muted);
+    localStorage.setItem("sound_muted", is_muted ? "true" : "false");
 }
