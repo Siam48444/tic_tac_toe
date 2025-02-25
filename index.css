@@ -51,7 +51,7 @@ main {
     grid-template-columns: repeat(3, auto);
 }
 
-.board > .board_borders_svg {
+.board_borders_svg {
     position: absolute;
     inset: 0;
     pointer-events: none;
