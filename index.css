@@ -201,7 +201,7 @@ main {
     fill: none;
     stroke: var(--color_main);
     stroke-width: var(--mark_thickness);
-    width: var(--mark_size);
+    width: calc(var(--winning_message_heading_size) * 1.8);
     aspect-ratio: 1;
     pointer-events: none;
 }

@@ -115,7 +115,7 @@ export function handle_clicks(e) {
                     Cell.addEventListener("click", handle_clicks, { once: true });
                 }
             }
-        }, 300);
+        }, 200);
     }
 }
 
