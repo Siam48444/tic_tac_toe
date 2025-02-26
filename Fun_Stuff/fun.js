@@ -9,6 +9,7 @@ if (theme_class) {
 // Fun button
 const main = document.getElementById("main");
 const fun_button = document.getElementById("fun_button");
+const scary_image = document.getElementById("scary_image");
 
 const padding = 30; // Space between the button and the edges
 
@@ -28,5 +29,5 @@ fun_button.addEventListener("mouseenter", () => {
 
 // Interactive button clicks
 fun_button.addEventListener("click", () => {
-    alert()
+    scary_image.classList.add("clicked");
 });
