@@ -5,8 +5,13 @@ export const winning_sound = new Audio("./Assets/Sounds/winning_sound.mp3");
 export const draw_sound = new Audio("./Assets/Sounds/draw_sound.mp3");
 
 
+// Adjust the volume (if needed)
+winning_sound.volume = 0.9;
+draw_sound.volume = 0.9;
 
-export let is_muted = false; // Keeps track if the sound is muted or not
+
+
+let is_muted = false; // Keeps track if the sound is muted or not
 
 
 
@@ -38,7 +43,7 @@ export function set_sound_mode() {
 
 
 // Function to play the sound
-export function play_sound(sound, is_muted = false) {
+export function play_sound(sound) {
     if (is_muted) return;
     else sound.play();
 }

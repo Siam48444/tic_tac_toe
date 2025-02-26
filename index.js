@@ -1,4 +1,4 @@
-import { winning_sound, draw_sound, play_sound, is_muted, set_sound_mode } from "./Assets/Sounds/sounds.js";
+import { winning_sound, draw_sound, play_sound, set_sound_mode } from "./Assets/Sounds/sounds.js";
 import { reset_scores, update_scores } from "./JS/scores.js";
 import { CROSS_CLASS, CIRCLE_CLASS, is_winner, is_draw, highlight_winning_cells } from "./JS/rules.js";
 import { disable_turn_selection, get_user_turn, circle_turn, swap_turn, update_turn_indicator, place_the_mark, reset_turn } from "./JS/turns.js";
@@ -140,15 +140,15 @@ export function end_the_game(win, winning_cells = []) {
         update_scores(circle_turn);
 
         // Play the winning sound
-        if (circle_turn && mode !== "two players") play_sound(draw_sound, is_muted); 
-        else play_sound(winning_sound, is_muted);
+        if (circle_turn && mode !== "two players") play_sound(draw_sound, ); 
+        else play_sound(winning_sound);
     }
     else {
         winning_message.classList.add("show_draw"); // Show the draw class if there is no winner
         winner_text.innerText = "DRAW!"; 
 
         // Play the draw sound
-        play_sound(draw_sound, is_muted); 
+        play_sound(draw_sound); 
     }
 
     // Add pointer events to the message after a delay
