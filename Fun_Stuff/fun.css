@@ -20,9 +20,17 @@ main {
     font-size: var(--button_font_size);
     color: var(--color_main);
     cursor: pointer;
-    z-index: 10;
 
     transition-property: top, left;
     transition-duration: calc(var(--transition_duration_fast) * 0.5);
     transition-delay: 100ms;
+}
+
+.scary_image {
+    position: fixed;
+    inset: 0;
+    background-image: url(../Assets/Images/favicon_cross.png);    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
