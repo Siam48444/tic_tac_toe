@@ -22,5 +22,5 @@ main {
     cursor: pointer;
 
     transition-property: top, left;
-    transition-duration: var(--transition_duration_fast);
+    transition-duration: calc(var(--transition_duration_fast) * 0.5);
 }
