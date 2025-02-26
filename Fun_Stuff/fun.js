@@ -7,10 +7,14 @@ if (theme_class) {
 
 
 // Fun button
+const main = document.getElementById("main");
 const fun_button = document.getElementById("fun_button");
+
 fun_button.addEventListener("mouseenter", () => {
-    const max_X = window.innerWidth - fun_button.clientWidth;
-    const max_Y = window.innerHeight - fun_button.clientHeight;
+    const max_X = main.innerWidth - fun_button.clientWidth * 2;
+    const max_Y = main.innerHeight - fun_button.clientHeight * 2;
+
+    console.log(main.innerWidth)
 
     const random_X = Math.random() * max_X;
     const random_Y = Math.random() * max_Y;
