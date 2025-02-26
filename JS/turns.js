@@ -1,5 +1,5 @@
 import { score_button_O, score_button_X } from "./scores.js";
-import { click_sound_X, click_sound_O, play_sound, is_muted } from "../Assets/Sounds/sounds.js";
+import { click_sound_X, click_sound_O, play_sound } from "../Assets/Sounds/sounds.js";
 import { CROSS_CLASS } from "../JS/rules.js";
 
 
@@ -68,10 +68,10 @@ export function place_the_mark(cell, current_turn) {
 
     // Play the sound of the current mark
     if (current_turn === CROSS_CLASS) {
-        play_sound(click_sound_X, is_muted)
+        play_sound(click_sound_X)
     }
     else {
-        play_sound(click_sound_O, is_muted);
+        play_sound(click_sound_O);
     }
 }
 
