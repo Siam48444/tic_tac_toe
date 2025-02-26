@@ -40,7 +40,7 @@ html {
 
 /* Page loading animation */
 body {
-    animation: load_animation var(--transition_duration_medium) forwards;
+    animation: load_animation var(--transition_duration_slow) forwards;
 }
 
 @keyframes load_animation {

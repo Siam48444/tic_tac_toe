@@ -12,6 +12,7 @@ const fun_button = document.getElementById("fun_button");
 
 const padding = 30; // Space between the button and the edges
 
+
 // Make the button tricky to click
 fun_button.addEventListener("mouseenter", () => {
     const max_X = main.clientWidth - fun_button.clientWidth - padding;
@@ -24,7 +25,8 @@ fun_button.addEventListener("mouseenter", () => {
     fun_button.style.top = `${random_Y}px`;
 });
 
+
 // Interactive button clicks
 fun_button.addEventListener("click", () => {
-    alert();
+    alert()
 });
