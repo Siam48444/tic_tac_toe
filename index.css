@@ -226,14 +226,13 @@ main {
 }
 
 /* Continue reminder animation */
-.winning_message:is(.show_draw, .cross, .circle) > p {
-    animation: continue_reminder ease-in-out var(--transition_duration_fast);
-    animation-delay: calc(var(--transition_duration_medium) * 3);
+.winning_message:is(.show_draw, .cross, .circle):hover > p {
+    animation: continue_reminder var(--transition_duration_fast) forwards;
 }
 
 @keyframes continue_reminder {
-    30% { transform: rotate(20deg); }
-    70% { transform: rotate(-20deg); }
+    30% { transform: rotate(10deg); }
+    70% { transform: rotate(-10deg); }
 }
 
 
@@ -573,10 +572,6 @@ body {
 @media (width >=1000px) {
     :is(.restart_button, .theme_button, .sound_button, .mode_selection):hover {
         box-shadow: var(--button_box_shadow_offset) var(--color_main);
-    }
-    
-    .winning_message:hover {
-        background-color: var(--color_sub);
     }
 
     .theme_option:not(.active_theme_option):hover {
