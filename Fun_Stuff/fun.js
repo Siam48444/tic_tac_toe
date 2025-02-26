@@ -1,3 +1,6 @@
+import { jumpscare } from "../JS/sounds.js";
+
+
 // Update the theme
 const theme_class = localStorage.getItem("theme_class");
 if (theme_class) {
@@ -30,6 +33,8 @@ fun_button.addEventListener("mouseenter", () => {
 // Interactive button clicks
 fun_button.addEventListener("click", () => {
     scary_image.classList.add("clicked");
+    jumpscare.play();
+
     setTimeout(() => {
         scary_image.classList.remove("clicked");
     }, 3000);

@@ -1,5 +1,5 @@
 import { score_button_O, score_button_X } from "./scores.js";
-import { click_sound_X, click_sound_O, play_sound } from "../Assets/Sounds/sounds.js";
+import { click_sound_X, click_sound_O, play_sound } from "./sounds.js";
 import { CROSS_CLASS } from "../JS/rules.js";
 
 

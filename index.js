@@ -1,4 +1,4 @@
-import { winning_sound, draw_sound, play_sound, set_sound_mode } from "./Assets/Sounds/sounds.js";
+import { winning_sound, draw_sound, play_sound, set_sound_mode } from "./JS/sounds.js";
 import { reset_scores, update_scores } from "./JS/scores.js";
 import { CROSS_CLASS, CIRCLE_CLASS, is_winner, is_draw, highlight_winning_cells } from "./JS/rules.js";
 import { disable_turn_selection, get_user_turn, circle_turn, swap_turn, update_turn_indicator, place_the_mark, reset_turn } from "./JS/turns.js";
