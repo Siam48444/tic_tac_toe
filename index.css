@@ -65,6 +65,9 @@ main {
     stroke-dasharray: var(--dash); 
     stroke-dashoffset: var(--dash); 
     
+}
+
+.board_borders_svg.board_animation {
     animation: cell_border_animation var(--transition_duration_slow) forwards;
 }
 
