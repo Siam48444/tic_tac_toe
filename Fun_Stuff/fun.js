@@ -37,5 +37,5 @@ fun_button.addEventListener("click", () => {
 
     setTimeout(() => {
         scary_image.classList.remove("clicked");
-    }, 3000);
+    }, 5000);
 });
