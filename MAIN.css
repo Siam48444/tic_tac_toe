@@ -39,18 +39,13 @@ html {
 }
 
 /* Page loading animation */
-body {
+main, nav, footer {
     animation: load_animation var(--transition_duration_slow) forwards;
 }
 
 @keyframes load_animation {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 
