@@ -20,6 +20,7 @@ main {
     font-size: var(--button_font_size);
     color: var(--color_main);
     cursor: pointer;
+    z-index: 10;
 
     transition-property: top, left;
     transition-duration: calc(var(--transition_duration_fast) * 0.5);
