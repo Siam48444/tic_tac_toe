@@ -551,18 +551,6 @@ main {
 }
 
 
-/* Page loading buttons animation */
-body {
-    animation: load_animation var(--transition_duration_slow) forwards;
-}
-
-@keyframes load_animation {
-    from {
-        opacity: 0;
-    }
-}
-
-
 
 
 

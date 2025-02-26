@@ -38,6 +38,17 @@ html {
     overflow-x: hidden;
 }
 
+/* Page loading animation */
+body {
+    animation: load_animation var(--transition_duration_slow) forwards;
+}
+
+@keyframes load_animation {
+    from {
+        opacity: 0;
+    }
+}
+
 ::-webkit-scrollbar {
     width: 0.8vmin;
     height: 0.8vmin;
