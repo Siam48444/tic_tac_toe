@@ -13,6 +13,7 @@ const cells = document.querySelectorAll(".cell");
 const winning_message = document.querySelector(".winning_message");
 const winner_text = document.querySelector(".winning_message h1");
 const restart_button = document.querySelector(".restart_button");
+const board_borders_svg = document.querySelector(".board_borders_svg");
 
 let game_over = false; // Tracks if the game is over
  
@@ -28,18 +29,24 @@ set_game_mode();
 
 
 
-// Start the game by user clicks
-winning_message.addEventListener("click", start_the_game); // Start the next round
-restart_button.addEventListener("click", () => { // Reset the scores and restart the game
+// Start the next round
+winning_message.addEventListener("click", () => {
+    start_the_game();
+
+    // Board animation
+    board_borders_svg.classList.remove("board_animation");
+    setTimeout(() => { board_borders_svg.classList.add("board_animation"); }, 1);
+}); 
+
+// Reset the scores and restart the game
+restart_button.addEventListener("click", () => { 
     reset_turn();
     reset_scores(); 
     start_the_game(); 
 
     // Restart button arrow animation
     restart_button.classList.add("restart_clicked");
-    setTimeout(() => {
-        restart_button.classList.remove("restart_clicked");
-    }, 600);
+    setTimeout(() => { restart_button.classList.remove("restart_clicked"); }, 600);
 }); 
 
 
@@ -132,18 +139,16 @@ export function end_the_game(win, winning_cells = []) {
         highlight_winning_cells(cells, winning_cells); 
         update_scores(circle_turn);
 
-        if (circle_turn && mode !== "two players") {
-            play_sound(draw_sound, is_muted); // Play the winning sound
-        }
-        else {
-            play_sound(winning_sound, is_muted);
-        }
+        // Play the winning sound
+        if (circle_turn && mode !== "two players") play_sound(draw_sound, is_muted); 
+        else play_sound(winning_sound, is_muted);
     }
     else {
         winning_message.classList.add("show_draw"); // Show the draw class if there is no winner
         winner_text.innerText = "DRAW!"; 
 
-        play_sound(draw_sound, is_muted); // Play the draw sound
+        // Play the draw sound
+        play_sound(draw_sound, is_muted); 
     }
 
     // Add pointer events to the message after a delay
