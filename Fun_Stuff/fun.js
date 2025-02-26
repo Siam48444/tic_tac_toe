@@ -30,4 +30,7 @@ fun_button.addEventListener("mouseenter", () => {
 // Interactive button clicks
 fun_button.addEventListener("click", () => {
     scary_image.classList.add("clicked");
+    setTimeout(() => {
+        scary_image.classList.remove("clicked");
+    }, 3000);
 });

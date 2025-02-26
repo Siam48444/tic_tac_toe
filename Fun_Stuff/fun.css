@@ -23,13 +23,13 @@ main {
 
     transition-property: top, left;
     transition-duration: calc(var(--transition_duration_fast) * 0.5);
-    transition-delay: 100ms;
+    transition-delay: 1000ms;
 }
 
 .scary_image {
     position: fixed;
     inset: 0;
-    background-image: url(../Assets/Images/favicon_cross.png);    
+    background-image: url(./Fun_Images/bird-9266166_1280.jpg);    
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -38,5 +38,5 @@ main {
 }
 
 .scary_image.clicked { 
-    display: block; 
+    display: block;
 }
