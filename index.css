@@ -1,3 +1,33 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    background-color: var(--color_bg);
+    overflow-x: hidden;
+}
+
+/* Page loading animation */
+body {
+    animation: load_animation var(--transition_duration_medium) forwards;
+}
+
+@keyframes load_animation {
+    from {
+        opacity: 0;
+    }
+}
+
+
 nav {
     height: var(--nav_height);
     width: var(--main_width);
