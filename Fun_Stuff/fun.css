@@ -24,4 +24,5 @@ main {
 
     transition-property: top, left;
     transition-duration: calc(var(--transition_duration_fast) * 0.5);
+    transition-delay: 100ms;
 }
