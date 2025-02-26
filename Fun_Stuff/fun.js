@@ -10,11 +10,11 @@ if (theme_class) {
 const main = document.getElementById("main");
 const fun_button = document.getElementById("fun_button");
 
-fun_button.addEventListener("mouseenter", () => {
-    const max_X = main.innerWidth - fun_button.clientWidth * 2;
-    const max_Y = main.innerHeight - fun_button.clientHeight * 2;
+const padding = 30; // Space between the button and the edges
 
-    console.log(main.innerWidth)
+fun_button.addEventListener("mouseenter", () => {
+    const max_X = main.clientWidth - fun_button.clientWidth - padding * 2;
+    const max_Y = main.clientHeight - fun_button.clientHeight - padding * 2;
 
     const random_X = Math.random() * max_X;
     const random_Y = Math.random() * max_Y;
