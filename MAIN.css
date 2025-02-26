@@ -20,6 +20,39 @@
 }
 
 
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    background-color: var(--color_bg);
+    overflow-x: hidden;
+}
+
+/* Page loading animation */
+body {
+    animation: load_animation var(--transition_duration_fast) forwards;
+}
+
+@keyframes load_animation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 ::-webkit-scrollbar {
     width: 0.8vmin;
     height: 0.8vmin;

@@ -1,43 +1,7 @@
-*,
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body,
-html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    position: relative;
-    background-color: var(--color_bg);
-    overflow-x: hidden;
-}
-
-/* Page loading animation */
-body {
-    animation: load_animation var(--transition_duration_slow) forwards;
-}
-
-@keyframes load_animation {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-
 main {
     width: var(--main_width);
     margin: auto;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: var(--color_bg);
     position: relative;
 }
