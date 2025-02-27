@@ -40,7 +40,7 @@ html {
 
 /* Page loading animation */
 main, nav, footer {
-    animation: load_animation var(--transition_duration_slow) forwards;
+    animation: load_animation var(--transition_duration_medium) forwards;
 }
 
 @keyframes load_animation {
@@ -92,7 +92,6 @@ main, nav, footer {
 
     --transition_duration_fast: 300ms;
     --transition_duration_medium: 600ms;
-    --transition_duration_slow: 1000ms;
 
     --theme_head_font_size: calc(var(--button_font_size) * 1.4);
     --theme_head_padding: clamp(1em, 1.5vmin, 1.5em);

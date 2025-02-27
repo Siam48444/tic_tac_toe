@@ -68,7 +68,7 @@ main {
 }
 
 .board_borders_svg.board_animation {
-    animation: cell_border_animation var(--transition_duration_slow) forwards;
+    animation: cell_border_animation calc(var(--transition_duration_medium) * 1.5) forwards;
 }
 
 @keyframes cell_border_animation {

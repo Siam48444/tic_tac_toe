@@ -23,7 +23,7 @@ main {
 
     transition-property: top, left;
     transition-duration: calc(var(--transition_duration_fast) * 0.5);
-    transition-delay: 1000ms;
+    transition-delay: 70ms;
 }
 
 .scary_image {
