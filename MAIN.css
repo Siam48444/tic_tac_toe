@@ -44,7 +44,9 @@ html {
 }
 
 /* Page loading animation */
-main, nav, footer {
+main, 
+nav, 
+footer {
     animation: load_animation var(--transition_duration_medium) forwards;
 }
 

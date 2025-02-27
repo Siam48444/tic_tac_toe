@@ -27,8 +27,8 @@ export function set_sound_mode() {
     const sound_muted = localStorage.getItem("sound_muted");
 
     if (sound_muted === "true") {
-        is_muted = true;
-        sound_button.classList.add("muted");
+        is_muted = true; // Mute the sound if it was muted before
+        sound_button.classList.add("muted"); // Show the sound state graphically
     }
 
 
