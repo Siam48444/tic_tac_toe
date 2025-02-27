@@ -1,4 +1,4 @@
-import { jumpscare_sound } from "../JS/sounds.js";
+import { jumpscare_sound } from "../Assets/Sounds/sounds.js";
 
 
 // Update the theme
