@@ -45,3 +45,31 @@ main {
     pointer-events: all;
     transition: none;
 }
+
+
+/* Message for small screen */
+.small_screen_message {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    inset: 10%;
+}
+
+.small_screen_message > h1 {
+    font-family: "Extrabold";
+    font-size: calc(var(--winning_message_heading_size) * 0.8);
+    color: var(--color_main);
+    line-height: 1;
+    text-align: center;
+}
+
+
+
+
+
+
+@media (width <= 1000px) {
+    :is(.fun_button, .scary_image) { display: none; }
+    .small_screen_message { display: flex; }
+}
