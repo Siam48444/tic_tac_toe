@@ -1,4 +1,4 @@
-import { jumpscare } from "../JS/sounds.js";
+import { jumpscare_sound } from "../JS/sounds.js";
 
 
 // Update the theme
@@ -21,7 +21,7 @@ const padding = 100; // Desired space between the button and the edges
 // Interactive button clicks
 fun_button.addEventListener("click", () => {
     scary_image.classList.add("clicked"); // Reveal the scary image
-    jumpscare.play(); // Play the scary sound
+    jumpscare_sound.play(); // Play the scary sound
     setTimeout(() => { scary_image.classList.remove("clicked"); }, 5000); // Remove the scary image
 });
 
