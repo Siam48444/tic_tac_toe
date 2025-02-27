@@ -53,13 +53,13 @@ main {
     align-items: center;
     justify-content: center;
     position: absolute;
-    inset: 0;
+    inset: 10%;
 }
 
 .small_screen_message > h1 {
     font-family: "Extrabold";
-    font-size: var(--winning_message_heading_size);
-    color: var(--color_sub);
+    font-size: calc(var(--winning_message_heading_size) * 0.8);
+    color: var(--color_main);
     line-height: 1;
     text-align: center;
 }
