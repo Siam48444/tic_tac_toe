@@ -29,12 +29,6 @@ fun_button.addEventListener("click", () => {
 
 // Make the button tricky to click
 fun_button.addEventListener("mouseenter", () => {
-    
-});
-
-
-
-function make_the_button_move() {
     const max_X = main.clientWidth - fun_button.clientWidth - padding;
     const max_Y = main.clientHeight - fun_button.clientHeight - padding;
 
@@ -43,4 +37,4 @@ function make_the_button_move() {
 
     fun_button.style.left = `${random_X}px`;
     fun_button.style.top = `${random_Y}px`;
-}
+});
