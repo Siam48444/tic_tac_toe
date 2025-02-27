@@ -17,6 +17,16 @@ const scary_image = document.getElementById("scary_image");
 const padding = 100; // Desired space between the button and the edges
 
 
+
+// Interactive button clicks
+fun_button.addEventListener("click", () => {
+    scary_image.classList.add("clicked"); // Reveal the scary image
+    jumpscare.play(); // Play the scary sound
+    setTimeout(() => { scary_image.classList.remove("clicked"); }, 5000); // Remove the scary image
+});
+
+
+
 // Make the button tricky to click
 fun_button.addEventListener("mouseenter", () => {
     const max_X = main.clientWidth - fun_button.clientWidth - padding;
@@ -27,13 +37,4 @@ fun_button.addEventListener("mouseenter", () => {
 
     fun_button.style.left = `${random_X}px`;
     fun_button.style.top = `${random_Y}px`;
-});
-
-
-
-// Interactive button clicks
-fun_button.addEventListener("click", () => {
-    scary_image.classList.add("clicked"); // Reveal the scary image
-    jumpscare.play(); // Play the scary sound
-    setTimeout(() => { scary_image.classList.remove("clicked"); }, 5000); // Remove the scary image
 });
