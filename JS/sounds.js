@@ -7,8 +7,8 @@ export const jumpscare_sound = new Audio("../Assets/Sounds/jumpscare_sound.mp3")
 
 
 // Adjust the volume (if needed)
-winning_sound.volume = 0.5;
-draw_sound.volume = 0.5;
+winning_sound.volume = 0.8;
+draw_sound.volume = 0.8;
 
 
 
