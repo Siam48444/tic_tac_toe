@@ -29,7 +29,7 @@ main {
 .scary_image {
     position: fixed;
     inset: 0;
-    background-image: url(../Assets/Images/scary_image.png);    
+    background-image: url(../Assets/Images/scary_image.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -40,7 +40,7 @@ main {
     transition: opacity var(--transition_duration_fast);
 }
 
-.scary_image.clicked { 
+.scary_image.clicked {
     opacity: 1;
     pointer-events: all;
     transition: none;
@@ -56,7 +56,7 @@ main {
     inset: 10%;
 }
 
-.small_screen_message > h1 {
+.small_screen_message>h1 {
     font-family: "Extrabold";
     font-size: calc(var(--winning_message_heading_size) * 0.8);
     color: var(--color_main);
@@ -69,7 +69,12 @@ main {
 
 
 
-@media (width <= 1000px) {
-    :is(.fun_button, .scary_image) { display: none; }
-    .small_screen_message { display: flex; }
+@media (width <=1000px) {
+    :is(.fun_button, .scary_image) {
+        display: none;
+    }
+
+    .small_screen_message {
+        display: flex;
+    }
 }
