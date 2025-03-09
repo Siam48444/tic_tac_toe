@@ -44,8 +44,12 @@ export function set_sound_mode() {
 
 // Function to play the sound
 export function play_sound(sound) {
-    if (is_muted) return;
-    else sound.play();
+    if (is_muted) {
+        return;
+    }
+    else {
+        sound.play();
+    }
 }
 
 
