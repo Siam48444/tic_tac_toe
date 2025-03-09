@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tic-Tac-Toe</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="./Assets/Images/favicon_circle.png" type="image/x-icon" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="./index.css" />
+        <link rel="stylesheet" href="./MAIN.css" />
+
+        <!-- JS -->
+        <script src="./index.js" defer type="module"></script>
+        <script src="./JS/theme.js" defer></script>
+    </head>
+    <body>
+        <!-- Navigation bar -->
+        <nav>
+            <!-- Sound button -->
+            <button id="sound_button" class="sound_button" title="Toggle sound">
+                <svg viewBox="4.5 5.5 25 25" class="sound_svg">
+                    <defs>
+                        <clipPath>
+                            <path d="m 14.35,-0.14 -5.86,5.86 20.73,20.78 5.86,-5.91 z"></path>
+                            <path d="M 7.07,6.87 -1.11,15.33 19.61,36.11 27.80,27.60 z"></path>
+                            <path d="M 9.09,5.20 6.47,7.88 26.82,28.77 29.66,25.99 z"></path>
+                        </clipPath>
+                        <clipPath><path d="m -11.45,-15.55 -4.44,4.51 20.45,20.94 4.55,-4.66 z"></path></clipPath>
+                    </defs>
+                    <path d="M8,21 L12,21 L17,26 L17,10 L12,15 L8,15 L8,21 Z M19,14 L19,22 C20.48,21.32 21.5,19.77 21.5,18 C21.5,16.26 20.48,14.74 19,14 ZM19,11.29 C21.89,12.15 24,14.83 24,18 C24,21.17 21.89,23.85 19,24.71 L19,26.77 C23.01,25.86 26,22.28 26,18 C26,13.72 23.01,10.14 19,9.23 L19,11.29 Z"></path>
+
+                    <line id="sound_muted_line" x1="8" y1="8" x2="28" y2="28"></line>
+                </svg>
+            </button>
+
+            <!-- Button for toggling themes -->
+            <button class="theme_button" title="Select a theme">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                        d="M0 64C0 28.7 28.7 0 64 0L352 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64L64 192c-35.3 0-64-28.7-64-64L0 64zM160 352c0-17.7 14.3-32 32-32l0-16c0-44.2 35.8-80 80-80l144 0c17.7 0 32-14.3 32-32l0-32 0-90.5c37.3 13.2 64 48.7 64 90.5l0 32c0 53-43 96-96 96l-144 0c-8.8 0-16 7.2-16 16l0 16c17.7 0 32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-128z" />
+                </svg>
+
+                <p></p>
+            </button>
+        </nav>
+
+        <main>
+            <!-- Player details on the top -->
+            <div class="top_details">
+                <!-- Mode selection -->
+                <div class="custom_select" title="Choose game mode">
+                    <select id="mode_selection" class="mode_selection">
+                        <option value="two players" selected title="Play with a friend (if you have one)">🤝 Two Players</option>
+                        <option value="easy" title="This AI is a dumbass">😎 Easy</option>
+                        <option value="medium" title="Well it's great">🤯 Medium</option>
+                        <option value="hard" title="Don't even hope to win">👿🔥 Asian 🔥👿</option>
+                    </select>
+
+                    <svg class="custom-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z" />
+                    </svg>
+                </div>
+
+                <div class="scoreboard">
+                    <button class="score_button score_button_X">
+                        <svg class="cross_svg" viewBox="0 0 100 100">
+                            <line x1="15" y1="15" x2="85" y2="85" />
+                            <line x1="85" y1="15" x2="15" y2="85" />
+                        </svg>
+                        <p class="score_X">-</p>
+                    </button>
+                    <button class="score_button score_button_O">
+                        <svg class="circle_svg" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="35" />
+                        </svg>
+                        <p class="score_O">-</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- The board of the game -->
+            <div class="board">
+                <div class="cell">
+                    <svg class="circle_svg" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="35" />
+                    </svg>
+                    <svg class="cross_svg" viewBox="0 0 100 100">
+                        <line x1="15" y1="15" x2="85" y2="85" />
+                        <line x1="85" y1="15" x2="15" y2="85" />
+                    </svg>
+                </div>
+                <div class="cell">
+                    <svg class="circle_svg" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="35" />
+                    </svg>
+                    <svg class="cross_svg" viewBox="0 0 100 100">
+                        <line x1="15" y1="15" x2="85" y2="85" />
+                        <line x1="85" y1="15" x2="15" y2="85" />
+                    </svg>
+                </div>
+                <div class="cell">
+                    <svg class="circle_svg" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="35" />
+                    </svg>
+                    <svg class="cross_svg" viewBox="0 0 100 100">
+                        <line x1="15" y1="15" x2="85" y2="85" />
+                        <line x1="85" y1="15" x2="15" y2="85" />
+                    </svg>
+                </div>
+                <div class="cell">
+                    <svg class="circle_svg" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="35" />
+                    </svg>
+                    <svg class="cross_svg" viewBox="0 0 100 100">
+                        <line x1="15" y1="15" x2="85" y2="85" />
+                        <line x1="85" y1="15" x2="15" y2="85" />
+                    </svg>
+                </div>
+                <div class="cell">
+                    <svg class="circle_svg" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="35" />
+                    </svg>
+                    <svg class="cross_svg" viewBox="0 0 100 100">
+                        <line x1="15" y1="15" x2="85" y2="85" />
+                        <line x1="85" y1="15" x2="15" y2="85" />
+                    </svg>
+                </div>
+                <div class="cell">
+                    <svg class="circle_svg" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="35" />
+                    </svg>
+                    <svg class="cross_svg" viewBox="0 0 100 100">
+                        <line x1="15" y1="15" x2="85" y2="85" />
+                        <line x1="85" y1="15" x2="15" y2="85" />
+                    </svg>
+                </div>
+                <div class="cell">
+                    <svg class="circle_svg" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="35" />
+                    </svg>
+                    <svg class="cross_svg" viewBox="0 0 100 100">
+                        <line x1="15" y1="15" x2="85" y2="85" />
+                        <line x1="85" y1="15" x2="15" y2="85" />
+                    </svg>
+                </div>
+                <div class="cell">
+                    <svg class="circle_svg" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="35" />
+                    </svg>
+                    <svg class="cross_svg" viewBox="0 0 100 100">
+                        <line x1="15" y1="15" x2="85" y2="85" />
+                        <line x1="85" y1="15" x2="15" y2="85" />
+                    </svg>
+                </div>
+                <div class="cell">
+                    <svg class="circle_svg" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="35" />
+                    </svg>
+                    <svg class="cross_svg" viewBox="0 0 100 100">
+                        <line x1="15" y1="15" x2="85" y2="85" />
+                        <line x1="85" y1="15" x2="15" y2="85" />
+                    </svg>
+                </div>
+
+                <!-- Board borders svg -->
+                <svg class="board_borders_svg board_animation" viewBox="0 0 100 100">
+                    <!-- Vertical Lines -->
+                    <line x1="33.333%" y1="0" x2="33.333%" y2="100" />
+                    <line x1="66.666%" y1="100" x2="66.666%" y2="0" />
+
+                    <!-- Horizontal Lines -->
+                    <line x1="0" y1="33.333%" x2="100" y2="33.333%" />
+                    <line x1="100" y1="66.666%" x2="0" y2="66.666%" />
+                </svg>
+
+                <!-- A message to show after each game -->
+                <div class="winning_message">
+                    <div class="winning_mark_container">
+                        <svg class="circle_svg" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="35" />
+                        </svg>
+                        <svg class="cross_svg" viewBox="0 0 100 100">
+                            <line x1="15" y1="15" x2="85" y2="85" />
+                            <line x1="85" y1="15" x2="15" y2="85" />
+                        </svg>
+                    </div>
+
+                    <!-- Winning message text -->
+                    <h1></h1>
+                    <p>- Click to continue -</p>
+                </div>
+            </div>
+
+            <!-- Button to restart the game -->
+            <button class="restart_button" title="Reset scores and restart">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z" />
+                </svg>
+                Restart
+            </button>
+        </main>
+
+        <!-- Footer section -->
+        <footer>
+            <a href="./Fun_Stuff/fun.html">- Created by SIAM -</a>
+        </footer>
+
+        <!-- Themes container -->
+        <div class="theme_container">
+            <div class="theme_palette">
+                <div class="theme_top_head">
+                    <p>Select theme</p>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                        <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                    </svg>
+                </div>
+
+                <div class="theme_grid">
+                    <button class="theme_option active_theme_option" data-theme="default_light" data-theme-name="Default Light">
+                        Default Light
+                        <div class="theme_indicator" style="background-color: #eeeeee">
+                            <span style="background-color: #454545"></span>
+                            <span style="background-color: #d0d4d9"></span>
+                            <span style="background-color: #454545"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="default_dark" data-theme-name="Default Dark">
+                        Default Dark
+                        <div class="theme_indicator" style="background-color: #454545">
+                            <span style="background-color: #eeeeee"></span>
+                            <span style="background-color: #939597"></span>
+                            <span style="background-color: #eeeeee"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="dollar" data-theme-name="Dollar">
+                        Dollar
+                        <div class="theme_indicator" style="background-color: #e4e4d4">
+                            <span style="background-color: #415041"></span>
+                            <span style="background-color: #6b876b"></span>
+                            <span style="background-color: #cbd0bf"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="serika_dark" data-theme-name="Serika Dark">
+                        Serika Dark
+                        <div class="theme_indicator" style="background-color: #333538">
+                            <span style="background-color: #6f7072"></span>
+                            <span style="background-color: #e2b714"></span>
+                            <span style="background-color: #b1b1b1"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="moonlight" data-theme-name="Moonlight">
+                        Moonlight
+                        <div class="theme_indicator" style="background-color: #191f29">
+                            <span style="background-color: #b1b1b1"></span>
+                            <span style="background-color: #c69f68"></span>
+                            <span style="background-color: #6f7072"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="retro" data-theme-name="Retro">
+                        Retro
+                        <div class="theme_indicator" style="background-color: #d9d2c1">
+                            <span style="background-color: #6f7072"></span>
+                            <span style="background-color: #1d1b17"></span>
+                            <span style="background-color: #b1b1b1"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="carbon" data-theme-name="Carbon">
+                        Carbon
+                        <div class="theme_indicator" style="background-color: #313131">
+                            <span style="background-color: #b1b1b1"></span>
+                            <span style="background-color: #f66e0d"></span>
+                            <span style="background-color: #6f7072"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="neon_ember" data-theme-name="Neon Ember">
+                        Neon Ember
+                        <div class="theme_indicator" style="background-color: #333a45">
+                            <span style="background-color: #6f7072"></span>
+                            <span style="background-color: #f44c7f"></span>
+                            <span style="background-color: #cccccc"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="cafe" data-theme-name="Cafe">
+                        Cafe
+                        <div class="theme_indicator" style="background-color: #bba180">
+                            <span style="background-color: #dddddd"></span>
+                            <span style="background-color: #e7c293"></span>
+                            <span style="background-color: #14120f"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="red" data-theme-name="Red">
+                        Red
+                        <div class="theme_indicator" style="background-color: #6e2626">
+                            <span style="background-color: #14120f"></span>
+                            <span style="background-color: #e55050"></span>
+                            <span style="background-color: #ffabab"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="darling" data-theme-name="Darling">
+                        Darling
+                        <div class="theme_indicator" style="background-color: #fec8cd">
+                            <span style="background-color: #ffffff"></span>
+                            <span style="background-color: #a30000"></span>
+                            <span style="background-color: #ffffff"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="discord" data-theme-name="Discord">
+                        Discord
+                        <div class="theme_indicator" style="background-color: #25272b">
+                            <span style="background-color: #d1d1d1"></span>
+                            <span style="background-color: #5a65ea"></span>
+                            <span style="background-color: #3c3f44"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="honey" data-theme-name="Honey">
+                        Honey
+                        <div class="theme_indicator" style="background-color: #f2aa00">
+                            <span style="background-color: #af7b00"></span>
+                            <span style="background-color: #fff546"></span>
+                            <span style="background-color: #fff7ba"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="leather" data-theme-name="Leather">
+                        Leather
+                        <div class="theme_indicator" style="background-color: #a86948">
+                            <span style="background-color: #ffe4bd"></span>
+                            <span style="background-color: #754931"></span>
+                            <span style="background-color: #ffe4bd"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="lime" data-theme-name="Lime">
+                        Lime
+                        <div class="theme_indicator" style="background-color: #7c878e">
+                            <span style="background-color: #6e787c"></span>
+                            <span style="background-color: #a7dd50"></span>
+                            <span style="background-color: #bfcedb"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="mexican" data-theme-name="Mexican">
+                        Mexican
+                        <div class="theme_indicator" style="background-color: #f8ad34">
+                            <span style="background-color: #bb8837"></span>
+                            <span style="background-color: #333333"></span>
+                            <span style="background-color: #d3dae0"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="miami" data-theme-name="Miami">
+                        Miami
+                        <div class="theme_indicator" style="background-color: #f35588">
+                            <span style="background-color: #b13961"></span>
+                            <span style="background-color: #05dfd7"></span>
+                            <span style="background-color: #ffffff"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="miami_nights" data-theme-name="Miami Nights">
+                        Miami Nights
+                        <div class="theme_indicator" style="background-color: #18181a">
+                            <span style="background-color: #b13961"></span>
+                            <span style="background-color: #05dfd7"></span>
+                            <span style="background-color: #ffffff"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="modern_ink" data-theme-name="Modern Ink">
+                        Modern Ink
+                        <div class="theme_indicator" style="background-color: #ffffff">
+                            <span style="background-color: #272727"></span>
+                            <span style="background-color: #ff360d"></span>
+                            <span style="background-color: #b9b9b9"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="menthol" data-theme-name="Menthol">
+                        Menthol
+                        <div class="theme_indicator" style="background-color: #00c18c">
+                            <span style="background-color: #106e50"></span>
+                            <span style="background-color: #ffffff"></span>
+                            <span style="background-color: #11966c"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="metaverse" data-theme-name="Metaverse">
+                        Metaverse
+                        <div class="theme_indicator" style="background-color: #232323">
+                            <span style="background-color: #853b11"></span>
+                            <span style="background-color: #d82934"></span>
+                            <span style="background-color: #e6e6e6"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="olive" data-theme-name="Olive">
+                        Olive
+                        <div class="theme_indicator" style="background-color: #e9e5cc">
+                            <span style="background-color: #c2c2c2"></span>
+                            <span style="background-color: #53533e"></span>
+                            <span style="background-color: #1f1f1f"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="peach" data-theme-name="Peach">
+                        Peach
+                        <div class="theme_indicator" style="background-color: #e0d7c1">
+                            <span style="background-color: #d3bda4"></span>
+                            <span style="background-color: #a04e38"></span>
+                            <span style="background-color: #887968"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="shadow" data-theme-name="Shadow">
+                        Shadow
+                        <div class="theme_indicator" style="background-color: #000000">
+                            <span style="background-color: #b3b3b3"></span>
+                            <span style="background-color: #eeeeee"></span>
+                            <span style="background-color: #424242"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="strawberry" data-theme-name="Strawberry">
+                        Strawberry
+                        <div class="theme_indicator" style="background-color: #f37f83">
+                            <span style="background-color: #e06870"></span>
+                            <span style="background-color: #fcfcf8"></span>
+                            <span style="background-color: #9e484e"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="tangerine" data-theme-name="Tangerine">
+                        Tangerine
+                        <div class="theme_indicator" style="background-color: #ffede0">
+                            <span style="background-color: #222222"></span>
+                            <span style="background-color: #fe5503"></span>
+                            <span style="background-color: #fdd3bf"></span>
+                        </div>
+                    </button>
+                    <button class="theme_option" data-theme="watermelon" data-theme-name="Watermelon">
+                        Watermelon
+                        <div class="theme_indicator" style="background-color: #1f4437">
+                            <span style="background-color: #dddddd"></span>
+                            <span style="background-color: #d6686f"></span>
+                            <span style="background-color: #589b83"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

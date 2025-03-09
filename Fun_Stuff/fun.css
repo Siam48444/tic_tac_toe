@@ -1,0 +1,80 @@
+main {
+    width: var(--main_width);
+    margin: auto;
+    min-height: 100vh;
+    background-color: var(--color_bg);
+    position: relative;
+}
+
+.fun_button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: var(--button_padding);
+    background-color: var(--color_sub);
+    outline: none;
+    border: var(--button_border);
+    border-radius: var(--button_border_radius);
+    font-family: "Medium";
+    font-size: var(--button_font_size);
+    color: var(--color_main);
+    cursor: pointer;
+
+    transition-property: top, left;
+    transition-duration: calc(var(--transition_duration_fast) * 0.5);
+    transition-delay: 70ms;
+}
+
+.scary_image {
+    position: fixed;
+    inset: 0;
+    background-image: url(../Assets/Images/scary_image.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity var(--transition_duration_fast);
+}
+
+.scary_image.clicked {
+    opacity: 1;
+    pointer-events: all;
+    transition: none;
+}
+
+
+/* Message for small screen */
+.small_screen_message {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    inset: 10%;
+}
+
+.small_screen_message>h1 {
+    font-family: "Extrabold";
+    font-size: calc(var(--winning_message_heading_size) * 0.8);
+    color: var(--color_main);
+    line-height: 1;
+    text-align: center;
+}
+
+
+
+
+
+
+@media (width <=1000px) {
+    :is(.fun_button, .scary_image) {
+        display: none;
+    }
+
+    .small_screen_message {
+        display: flex;
+    }
+}
