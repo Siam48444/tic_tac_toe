@@ -1,4 +1,4 @@
-import { jumpscare_sound } from "../JS/sounds.js";
+const jumpscare_sound = new Audio("../Assets/Sounds/jumpscare_sound.mp3");
 
 
 // Update the theme
