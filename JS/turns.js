@@ -1,10 +1,7 @@
 import { score_button_O, score_button_X } from "./scores.js";
 import { play_sound } from "./sounds.js";
 import { CROSS_CLASS } from "./rules.js";
-
-
-const click_sound_O = new Audio("../Assets/Sounds/sound_O.mp3");
-const click_sound_X = new Audio("../Assets/Sounds/sound_X.mp3");
+import { click_sound_O, click_sound_X } from "../index.js";
 
 
 
