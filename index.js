@@ -13,6 +13,10 @@ import { place_hard_ai_move } from "./AI/ai_hard.js";
 const winning_sound = new Audio("./Assets/Sounds/winning_sound.mp3");
 const draw_sound = new Audio("./Assets/Sounds/draw_sound.mp3");
 
+// Adjust the volume (if needed)
+winning_sound.volume = 0.8;
+draw_sound.volume = 0.8;
+
 
 
 const cells = document.querySelectorAll(".cell");

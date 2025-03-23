@@ -1,9 +1,3 @@
-// Adjust the volume (if needed)
-winning_sound.volume = 0.8;
-draw_sound.volume = 0.8;
-
-
-
 let is_muted = false; // Keeps track if the sound is muted or not
 
 
