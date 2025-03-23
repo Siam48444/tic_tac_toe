@@ -1,4 +1,4 @@
-import { winning_sound, draw_sound, play_sound, set_sound_mode } from "./JS/sounds.js";
+import { play_sound, set_sound_mode } from "./JS/sounds.js";
 import { reset_scores, update_scores } from "./JS/scores.js";
 import { CROSS_CLASS, CIRCLE_CLASS, is_winner, is_draw, highlight_winning_cells } from "./JS/rules.js";
 import { disable_turn_selection, get_user_turn, circle_turn, swap_turn, update_turn_indicator, place_the_mark, reset_turn } from "./JS/turns.js";
@@ -6,6 +6,12 @@ import { mode, set_game_mode } from "./JS/mode_selection.js";
 import { place_easy_ai_move } from "./AI/ai_easy.js";
 import { place_medium_ai_move } from "./AI/ai_medium.js";
 import { place_hard_ai_move } from "./AI/ai_hard.js";
+
+
+
+
+const winning_sound = new Audio("./Assets/Sounds/winning_sound.mp3");
+const draw_sound = new Audio("./Assets/Sounds/draw_sound.mp3");
 
 
 
@@ -140,7 +146,7 @@ export function end_the_game(win, winning_cells = []) {
         update_scores(circle_turn);
 
         // Play the winning sound
-        if (circle_turn && mode !== "two players") play_sound(draw_sound, ); 
+        if (circle_turn && mode !== "two players") play_sound(draw_sound); 
         else play_sound(winning_sound);
     }
     else {
