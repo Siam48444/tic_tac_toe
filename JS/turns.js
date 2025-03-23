@@ -3,8 +3,8 @@ import { play_sound } from "./sounds.js";
 import { CROSS_CLASS } from "./rules.js";
 
 
-const click_sound_O = new Audio("../Assets/Sounds/click_sound_O.mp3");
-const click_sound_X = new Audio("../Assets/Sounds/click_sound_X.mp3");
+const click_sound_O = new Audio("../Assets/Sounds/sound_O.mp3");
+const click_sound_X = new Audio("../Assets/Sounds/sound_X.mp3");
 
 
 
