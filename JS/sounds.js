@@ -1,6 +1,6 @@
 // All the sounds of the game
-export const click_sound_O = new Audio("../Assets/Sounds/click_sound_O.mp3");
-export const click_sound_X = new Audio("../Assets/Sounds/click_sound_X.mp3");
+export const click_sound_O = new Audio("../Assets/Sounds/clicking_sound_O.mp3");
+export const click_sound_X = new Audio("../Assets/Sounds/clicking_sound_X.mp3");
 export const winning_sound = new Audio("../Assets/Sounds/winning_sound.mp3");
 export const draw_sound = new Audio("../Assets/Sounds/draw_sound.mp3");
 
