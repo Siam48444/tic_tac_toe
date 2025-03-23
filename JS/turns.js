@@ -1,7 +1,7 @@
 import { score_button_O, score_button_X } from "./scores.js";
-import { play_sound } from "./sounds.js";
-import { CROSS_CLASS } from "./rules.js";
-import { click_sound_O, click_sound_X } from "../index.js";
+// import { play_sound } from "./sounds.js";
+// import { CROSS_CLASS } from "./rules.js";
+// import { click_sound_O, click_sound_X } from "../index.js";
 
 
 
@@ -67,13 +67,7 @@ export function update_turn_indicator() {
 export function place_the_mark(cell, current_turn) { 
     cell.classList.add(current_turn); // Place the mark to the cell
 
-    // Play the sound of the current mark
-    if (current_turn === CROSS_CLASS) {
-        play_sound(click_sound_X)
-    }
-    else {
-        play_sound(click_sound_O);
-    }
+    
 }
 
 

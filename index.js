@@ -94,6 +94,14 @@ export function handle_clicks(e) {
     const current_turn = circle_turn ? CIRCLE_CLASS : CROSS_CLASS; // Determine current player's turn
     
     place_the_mark(cell, current_turn);
+
+    // Play the sound of the current mark
+    if (current_turn === CROSS_CLASS) {
+        play_sound(click_sound_X)
+    }
+    else {
+        play_sound(click_sound_O);
+    }
     
     const winning_cells = is_winner(cells, current_turn); // Check if current move is a winning move
 
