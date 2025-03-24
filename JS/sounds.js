@@ -1,3 +1,15 @@
+export const winning_sound = new Audio("./Assets/Sounds/winning_sound.mp3");
+export const draw_sound = new Audio("./Assets/Sounds/draw_sound.mp3");
+export const click_sound_O = new Audio("./Assets/Sounds/click_sound_O.mp3");
+export const click_sound_X = new Audio("./Assets/Sounds/click_sound_X.mp3");
+
+
+// Adjust the volume (if needed)
+winning_sound.volume = 0.8;
+draw_sound.volume = 0.8;
+
+
+
 let is_muted = false; // Keeps track if the sound is muted or not
 
 

@@ -1,4 +1,4 @@
-import { play_sound, set_sound_mode } from "./JS/sounds.js";
+import { click_sound_O, click_sound_X, winning_sound, draw_sound, play_sound, set_sound_mode } from "./JS/sounds.js";
 import { reset_scores, update_scores } from "./JS/scores.js";
 import { CROSS_CLASS, CIRCLE_CLASS, is_winner, is_draw, highlight_winning_cells } from "./JS/rules.js";
 import { disable_turn_selection, get_user_turn, circle_turn, swap_turn, update_turn_indicator, place_the_mark, reset_turn } from "./JS/turns.js";
@@ -6,18 +6,6 @@ import { mode, set_game_mode } from "./JS/mode_selection.js";
 import { place_easy_ai_move } from "./AI/ai_easy.js";
 import { place_medium_ai_move } from "./AI/ai_medium.js";
 import { place_hard_ai_move } from "./AI/ai_hard.js";
-
-
-
-
-const winning_sound = new Audio("./Assets/Sounds/winning_sound.mp3");
-const draw_sound = new Audio("./Assets/Sounds/draw_sound.mp3");
-const click_sound_O = new Audio("./Assets/Sounds/click_sound_O.mp3");
-const click_sound_X = new Audio("./Assets/Sounds/click_sound_X.mp3");
-
-// Adjust the volume (if needed)
-winning_sound.volume = 0.8;
-draw_sound.volume = 0.8;
 
 
 
@@ -94,14 +82,6 @@ export function handle_clicks(e) {
     const current_turn = circle_turn ? CIRCLE_CLASS : CROSS_CLASS; // Determine current player's turn
     
     place_the_mark(cell, current_turn);
-
-    // Play the sound of the current mark
-    if (current_turn === CROSS_CLASS) {
-        play_sound(click_sound_X)
-    }
-    else {
-        play_sound(click_sound_O);
-    }
     
     const winning_cells = is_winner(cells, current_turn); // Check if current move is a winning move
 
