@@ -4,6 +4,7 @@ export const click_sound_O = new Audio("./Assets/Sounds/click_sound_O.mp3");
 export const click_sound_X = new Audio("./Assets/Sounds/click_sound_X.mp3");
 
 
+
 // Adjust the volume (if needed)
 winning_sound.volume = 0.8;
 draw_sound.volume = 0.8;
