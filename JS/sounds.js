@@ -48,6 +48,7 @@ export function play_sound(sound) {
         return;
     }
     else {
+        sound.currentTime = 0;
         sound.play();
     }
 }
